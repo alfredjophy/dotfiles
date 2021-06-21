@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =0
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/ajrx/Github/via'
 let g:netrw_dirhist_0='/home/ajrx/Github/AlfredEVOL.github.io'
 let g:netrw_dirhist_9='/home/ajrx/Github'
 let g:netrw_dirhist_8='/home/ajrx/Github/Space_Invaders'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_5='/home/ajrx/Github/BrainFucker'
 let g:netrw_dirhist_4='/home/ajrx/Github/AlfredEVOL.github.io'
 let g:netrw_dirhist_3='/usr/share/applications'
 let g:netrw_dirhist_2='/etc'
-let g:netrw_dirhist_1='/home/ajrx/.config/protonvpn'

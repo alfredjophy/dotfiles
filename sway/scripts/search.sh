@@ -24,7 +24,7 @@ Search with Startpage
 Search with SearX
 "
 #if not search local files
-localFiles=$(locate $searchterm)
+localFiles=$(plocate $searchterm)
 
 if [ -z "$localFiles" ]
         then results="$results
