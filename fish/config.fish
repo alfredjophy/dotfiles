@@ -16,6 +16,7 @@ alias clone='cd /home/ajrx/GitClones && git clone'
 alias kicat='kitty +kitten icat'
 alias neofetch='neofetch --backend kitty --loop --source ~/.config/neofetch/Arch-linux-logo.png --size 400px'
 alias configit='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME/.config'
+motivate
 starship init fish | source
 
 

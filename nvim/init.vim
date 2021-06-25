@@ -34,6 +34,8 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'tpope/vim-fugitive'
 
+Plug 'neoclide/coc.nvim'
+
 call plug#end()
 
 colorscheme onedark

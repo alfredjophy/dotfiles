@@ -34,8 +34,9 @@ focus_follows_mouse yes
 exec swaybg -i /home/ajrx/.config/sway/wallpaper.png
 
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec swayidle -w timeout 300 '~/.config/sway/scripts/lock.sh' timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
-exec swayidle lock 'swaymsg "output * dpms on"&&~/.config/sway/scripts/lock.sh'
+exec swayidle -w timeout 300 'swaylock' timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
+
+exec swayidle lock 'swaymsg "output * dpms on"&& swaylock'
 exec swayidle unlock 'kill -s 1 $(pgrep swaylock)'
 # Use pactl to adjust volume in PulseAudio.
 #set $refresh_i3status killall -SIGUSR1 i3status
@@ -177,7 +178,7 @@ bindsym $mod+Shift+r reload
 # exit sway
 bindsym $mod+Shift+e exit
 #lock
-bindsym $mod+Shift+p exec '~/.config/sway/scripts/lock.sh' 
+bindsym $mod+Shift+p exec 'swaylock' 
 
 
 # resize window (you can also use the mouse for that)
