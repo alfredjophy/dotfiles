@@ -14,11 +14,9 @@ noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
 
-map <leader>f :NERDTreeToggle<cr>
+map <leader>f :NvimTreeToggle<cr>
 
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
-
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 Plug 'joshdick/onedark.vim'
 
@@ -35,6 +33,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 Plug 'neoclide/coc.nvim'
+
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+
+Plug 'kyazdani42/nvim-tree.lua'
 
 call plug#end()
 
