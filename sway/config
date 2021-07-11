@@ -212,10 +212,12 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 include /etc/sway/config.d/*
-input 1739:52756:SYNA32A0:00_06CB:CE14_Touchpad tap enabled
-input 1739:52756:SYNA32A0:00_06CB:CE14_Touchpad natural_scroll enabled
-input 1739:52756:SYNA32A0:00_06CB:CE14_Touchpad accel_profile "adaptive"
-input 1739:52756:SYNA32A0:00_06CB:CE14_Touchpad dwt enabled
+input 1739:52756:SYNA32A0:00_06CB:CE14_Touchpad { 
+        tap enabled
+        natural_scroll enabled
+        accel_profile "adaptive"
+        dwt enabled
+}
 
 
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
