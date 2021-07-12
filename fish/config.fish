@@ -14,7 +14,7 @@ alias du='dust'
 alias ip?='curl -4 ifconfig.co && curl -6 ifconfig.co'
 alias kicat='kitty +kitten icat'
 alias neofetch='neofetch --backend kitty --loop --source ~/.config/neofetch/Arch-linux-logo.png --size 400px'
-alias configit='/usr/bin/git --git-dir=$HOME/Repos/dotfiles --work-tree=$HOME/.config'
+alias dotfiles-git='/usr/bin/git --git-dir=$HOME/Repos/dotfiles --work-tree=$HOME/.config'
 alias update-nativefier-apps='cd ~/.local/apps && find . -mindepth 1 -maxdepth 1 -type d -exec nativefier --upgrade {} \;'
 
 
