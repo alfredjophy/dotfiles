@@ -1,7 +1,8 @@
 #!/bin/bash
 
 repos=$(find ~/Repos -name "*.git" -type d -exec exa --icons -d {} \;| sed -r 's#/.git##'| sed -r 's#Repos/##'| sed -r 's#/home/ajrx/##')
-repo=$(echo "$repos" |wofi --show dmenu)
+lines=$(echo "$repos" | wc -l)
+repo=$(echo "$repos" |wofi -i --show dmenu --lines=$lines)
 
 [ -z "$repo" ] && exit
 echo $repo

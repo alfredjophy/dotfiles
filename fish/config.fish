@@ -16,7 +16,7 @@ alias kicat='kitty +kitten icat'
 alias neofetch='neofetch --backend kitty --loop --source ~/.config/neofetch/Arch-linux-logo.png --size 400px'
 alias dotfiles-git='/usr/bin/git --git-dir=$HOME/Repos/dotfiles --work-tree=$HOME/.config'
 alias update-nativefier-apps='cd ~/.local/apps && find . -mindepth 1 -maxdepth 1 -type d -exec nativefier --upgrade {} \;'
-
+alias locate='plocate'
 
 motivate
 starship init fish | source
