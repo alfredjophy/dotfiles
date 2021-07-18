@@ -12,10 +12,10 @@ font pango:monospace 8
 xwayland enable
 #::::::::disable_window_border::::::::                                                                  
 for_window [class="^.*"] border pixel 0                                                                   
+for_window [app_id="^.*"] border pixel 0                                                                   
 for_window [class="^(Github Desktop|Signal|Brave-browser|Signal-desktop)$"] opacity 0.99
 for_window [app_id="^(Brave-browser|Element|electron|lutris)"] opacity 0.99
-#add app ids my boy
-
+for_window [app_id="^(org.kde.kdeconnect.daemon|pavucontrol-qt)$"] floating enable
 
 # Inhibit Idle if a window is fullscreen
 for_window [class="^.*"] inhibit_idle fullscreen
@@ -163,8 +163,6 @@ bindsym $mod+0 workspace number $ws10
 
 bindsym $mod+Ctrl+left workspace prev
 bindsym $mod+Ctrl+right workspace next
-bindsym $mod+Ctrl+h workspace prev
-bindsym $mod+Ctrl+l workspace next
 
 
 # move focused container to workspace
