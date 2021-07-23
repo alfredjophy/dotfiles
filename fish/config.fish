@@ -1,8 +1,4 @@
-
-
 export PATH=/bin/lscript:/bin/lscript:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/ajrx/.local/bin:/home/ajrx/go/bin
-
-
 
 #custom aliases
 alias 2048='2048 bluered'
@@ -16,7 +12,8 @@ alias neofetch='neofetch --backend kitty --loop --source ~/.config/neofetch/Arch
 alias dotfiles-git='/usr/bin/git --git-dir=$HOME/Repos/dotfiles --work-tree=$HOME/.config'
 alias update-nativefier-apps='cd ~/.local/apps && find . -mindepth 1 -maxdepth 1 -type d -exec nativefier --upgrade {} \; && cd -'
 alias locate='plocate'
-
+alias icat='kitty +kitten icat'
+alias zathura='zathura --fork'
 motivate
 starship init fish | source
 

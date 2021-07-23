@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-searchterm=$(wofi --lines=1 --show dmenu)
+searchterm=$(wofi --height=10% --show dmenu)
 
 [ -z "$searchterm" ] && exit
 
@@ -31,7 +31,7 @@ if [ -z "$localFiles" ]
                 No Local Files Found"
 else
 
-OLDIFS=$IFS        
+OLDIFS=$IFS       
 IFS='
 '
         for i in "$localFiles"

@@ -6,6 +6,7 @@ set mouse=a
 set clipboard+=unnamedplus
 
 let g:NERDCreateDefaultMappings = 1
+let g:dashboard_default_executive ='telescope'
 
 filetype plugin on
 
@@ -18,9 +19,14 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
 map <silent><leader>f :NvimTreeToggle<cr>
 map <silent><c-l> :noh<cr>
-
+map <silent><leader>t :lua require("FTerm").toggle()<cr>
+tmap <silent><leader>t :<cmd>lua require("FTerm").toggle()<cr>
 
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
+
+Plug 'preservim/nerdcommenter'
+
+Plug 'neovim/nvim-lspconfig'
 
 Plug 'itchyny/lightline.vim'
 
@@ -28,11 +34,7 @@ Plug 'terryma/vim-smooth-scroll'
 
 Plug 'jiangmiao/auto-pairs'
 
-Plug 'preservim/nerdcommenter'
-
-Plug 'airblade/vim-gitgutter'
-
-Plug 'tpope/vim-fugitive'
+Plug 'neovim/nvim-lspconfig'
 
 Plug 'neoclide/coc.nvim'
 
@@ -42,7 +44,19 @@ Plug 'kyazdani42/nvim-tree.lua'
 
 Plug 'joshdick/onedark.vim'
 
+Plug 'glepnir/dashboard-nvim'
+
+Plug 'nvim-lua/popup.nvim'
+
+Plug 'nvim-lua/plenary.nvim'
+
+Plug 'nvim-telescope/telescope.nvim'
+
+Plug 'numtostr/FTerm.nvim'
+
 call plug#end()
 
 colorscheme onedark
 let g:airline_theme='onedark'
+
+lua require('FTerm').setup()
