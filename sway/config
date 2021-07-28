@@ -3,7 +3,6 @@ exec hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 exec systemctl --user start sway-session.target
-exec touchegg
 
 set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
@@ -16,6 +15,8 @@ for_window [class="^.*"] border pixel 0
 for_window [app_id="^.*"] border pixel 0                                                                   
 for_window [class="^(Github Desktop|Signal|Brave-browser|Signal-desktop)$"] opacity 0.99
 for_window [app_id="^(Brave-browser|Element|electron|lutris)"] opacity 0.99
+
+# Enable floating
 for_window [app_id="^(org.kde.kdeconnect.daemon|pavucontrol-qt|songrec|electron|chromium)$"] floating enable
 for_window [class="^(Bitwarden|XEyes)$"] floating enable
 
@@ -78,7 +79,7 @@ bindsym $mod+q kill
 bindsym $mod+d exec pgrep wofi || wofi -Ii --lines=10 --show drun
 
 #brave
-bindsym $mod+b exec brave
+bindsym $mod+b exec /usr/bin/brave --profile-directory=Default
 
 #clipman
 bindsym $mod+c exec pgrep wofi || clipman pick -t wofi
