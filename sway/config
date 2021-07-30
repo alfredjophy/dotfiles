@@ -24,7 +24,6 @@ for_window [class="^(Bitwarden|XEyes)$"] floating enable
 for_window [class="^.*"] inhibit_idle fullscreen
 for_window [app_id="^.*"] inhibit_idle fullscreen
 
-
 default_border none
 
 set $default_gaps_inner 2                                                                                

@@ -17,5 +17,5 @@ alias zathura='zathura --fork'
 
 motivate
 starship init fish | source
-
+direnv hook fish | source
 

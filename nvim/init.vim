@@ -6,7 +6,7 @@ set mouse=a
 set clipboard+=unnamedplus
 
 let g:NERDCreateDefaultMappings = 1
-let g:dashboard_default_executive ='telescope'
+"let g:dashboard_default_executive ='telescope'
 
 filetype plugin on
 
@@ -34,23 +34,13 @@ Plug 'terryma/vim-smooth-scroll'
 
 Plug 'jiangmiao/auto-pairs'
 
-Plug 'neovim/nvim-lspconfig'
-
 Plug 'neoclide/coc.nvim'
 
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 
-Plug 'kyazdani42/nvim-tree.lua'
+"Plug 'kyazdani42/nvim-tree.lua' 
 
 Plug 'joshdick/onedark.vim'
-
-Plug 'glepnir/dashboard-nvim'
-
-Plug 'nvim-lua/popup.nvim'
-
-Plug 'nvim-lua/plenary.nvim'
-
-Plug 'nvim-telescope/telescope.nvim'
 
 Plug 'numtostr/FTerm.nvim'
 
@@ -60,3 +50,5 @@ colorscheme onedark
 let g:airline_theme='onedark'
 
 lua require('FTerm').setup()
+
+
