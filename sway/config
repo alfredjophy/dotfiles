@@ -17,7 +17,7 @@ for_window [class="^(Github Desktop|Signal|Brave-browser|Signal-desktop)$"] opac
 for_window [app_id="^(Brave-browser|Element|electron|lutris)"] opacity 0.99
 
 # Enable floating
-for_window [app_id="^(org.kde.kdeconnect.daemon|pavucontrol-qt|songrec|electron|chromium)$"] floating enable
+for_window [app_id="^(org.kde.kdeconnect.daemon|pavucontrol-qt|songrec|electron|chromium|org.kde.polkit-kde-authentication-agent-1)$"] floating enable
 for_window [class="^(Bitwarden|XEyes)$"] floating enable
 
 # Inhibit Idle if a window is fullscreen
@@ -226,7 +226,7 @@ input 1739:52756:SYNA32A0:00_06CB:CE14_Touchpad {
 }
 
 
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec /usr/lib/polkit-kde-authentication-agent-1
 exec /usr/lib/xdg-desktop-portal --replace
 exec wl-paste -t text --watch clipman store
 exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
