@@ -17,12 +17,16 @@ noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
 
-map <silent><leader>f :NvimTreeToggle<cr>
+map <silent><leader>f :NERDTreeToggle<cr>
 map <silent><c-l> :noh<cr>
 map <silent><leader>t :lua require("FTerm").toggle()<cr>
 tmap <silent><leader>t :<cmd>lua require("FTerm").toggle()<cr>
 
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'preservim/nerdtree'
 
 Plug 'preservim/nerdcommenter'
 
@@ -34,12 +38,12 @@ Plug 'terryma/vim-smooth-scroll'
 
 Plug 'jiangmiao/auto-pairs'
 
-Plug 'neoclide/coc.nvim'
-
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 
+Plug 'ryanoasis/vim-devicons'
+"
 "Plug 'kyazdani42/nvim-tree.lua' 
-
+"
 Plug 'joshdick/onedark.vim'
 
 Plug 'numtostr/FTerm.nvim'

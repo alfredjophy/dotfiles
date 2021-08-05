@@ -10,15 +10,20 @@ set $mod Mod4
 
 font pango:monospace 8
 xwayland enable
+
 #::::::::disable_window_border::::::::                                                                  
 for_window [class="^.*"] border pixel 0                                                                   
 for_window [app_id="^.*"] border pixel 0                                                                   
+
+#::::::::set transperancy::::::::::::
 for_window [class="^(Github Desktop|Signal|Brave-browser|Signal-desktop)$"] opacity 0.99
 for_window [app_id="^(Brave-browser|Element|electron|lutris)"] opacity 0.99
+#include 
 
 # Enable floating
-for_window [app_id="^(org.kde.kdeconnect.daemon|pavucontrol-qt|songrec|electron|chromium|org.kde.polkit-kde-authentication-agent-1)$"] floating enable
+for_window [app_id="^(org.kde.kdeconnect.daemon|dmenu|pavucontrol-qt|songrec|electron|chromium|org.kde.polkit-kde-authentication-agent-1|Popsicle)$"] floating enable
 for_window [class="^(Bitwarden|XEyes)$"] floating enable
+#for_window [name="^(Copying|Moving)*$"] floating enable 
 
 # Inhibit Idle if a window is fullscreen
 for_window [class="^.*"] inhibit_idle fullscreen
@@ -70,7 +75,7 @@ floating_modifier $mod
 bindsym $mod+Return exec kitty -1
 
 #search
-bindsym $mod+z exec /home/ajrx/.config/sway/scripts/search.sh
+bindcode --release 133 exec pgrep search.sh || /home/ajrx/.config/sway/scripts/search.sh
 
 # kill focused window
 bindsym $mod+q kill
@@ -87,7 +92,7 @@ bindsym $mod+c exec pgrep wofi || clipman pick -t wofi
 bindsym $mod+f exec kitty -1 ranger
 
 #editor
-bindsym $mod+t exec ~/.config/sway/scripts/reposelect.sh  
+bindsym $mod+t exec pgrep reposelect.sh || ~/.config/sway/scripts/reposelect.sh  
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -232,5 +237,6 @@ exec wl-paste -t text --watch clipman store
 exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
 exec udiskie -a 
 exec waybar -c ~/.config/waybar/config -s ~/.config/waybar/style.css
+exec /usr/lib/kdeconnectd
 exec kdeconnect-indicator
 include /etc/sway/config.d/*
