@@ -15,6 +15,7 @@ alias locate='plocate'
 alias icat='kitty +kitten icat'
 alias zathura='zathura --fork'
 alias brave='/usr/bin/brave --profile-directory=Default'
+alias of='onefetch'
 
 motivate
 

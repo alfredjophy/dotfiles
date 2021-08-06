@@ -1,15 +1,14 @@
-exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
-exec hash dbus-update-activation-environment 2>/dev/null && \
-     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+# Global Stuff
+set $mod Mod1
+set $sup Mod4
 
-exec systemctl --user start sway-session.target
-
-set $mod Mod4
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
+set $mod Mod1
+set $sup Mod4
 
 font pango:monospace 8
 xwayland enable
+
+# Window Management
 
 #::::::::disable_window_border::::::::                                                                  
 for_window [class="^.*"] border pixel 0                                                                   
@@ -21,9 +20,8 @@ for_window [app_id="^(Brave-browser|Element|electron|lutris)"] opacity 0.99
 #include 
 
 # Enable floating
-for_window [app_id="^(org.kde.kdeconnect.daemon|dmenu|pavucontrol-qt|songrec|electron|chromium|org.kde.polkit-kde-authentication-agent-1|Popsicle)$"] floating enable
+for_window [app_id="^(org.kde.kdeconnect.daemon|dmenu|pavucontrol-qt|songrec|electron|chromium|org.kde.polkit-kde-authentication-agent-1|Popsicle|fragments)$"] floating enable
 for_window [class="^(Bitwarden|XEyes)$"] floating enable
-#for_window [name="^(Copying|Moving)*$"] floating enable 
 
 # Inhibit Idle if a window is fullscreen
 for_window [class="^.*"] inhibit_idle fullscreen
@@ -38,15 +36,17 @@ gaps outer $default_gaps_outer
 smart_gaps on                                                                                             
 focus_follows_mouse yes
 
+# Wallpaper
 exec swaybg -i /home/ajrx/.config/sway/wallpaper.png
 
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec swayidle -w timeout 300 'swaylock' timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
-
+exec swayidle -w timeout 300 'swaylock --grace=5' timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
 exec swayidle lock 'swaymsg "output * dpms on"&& swaylock'
 exec swayidle unlock 'kill -s 1 $(pgrep swaylock)'
+
+# KEY BINDINGS
+
 # Use pactl to adjust volume in PulseAudio.
-#set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% 
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% 
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle 
@@ -55,17 +55,17 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 #brightness controls
 bindsym XF86MonBrightnessDown exec brightnessctl set 2%-
 bindsym XF86MonBrightnessUp exec brightnessctl set +2% 
+
 #media keys
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-
 #screenshot
 bindsym Print exec grimshot save output
-bindsym $mod+Print exec grimshot save active 
+bindsym $sup+Print exec grimshot save active 
 bindsym Shift+Print exec grimshot save window
-bindsym Mod1+Print exec grimshot save area 	
+bindsym $mod+Print exec grimshot save area 	
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -75,11 +75,12 @@ floating_modifier $mod
 bindsym $mod+Return exec kitty -1
 
 #search
-bindcode --release 133 exec pgrep search.sh || /home/ajrx/.config/sway/scripts/search.sh
+bindsym $sup+s exec pgrep pgrep wofi || /home/ajrx/.config/sway/scripts/search.sh
 
 # kill focused window
 bindsym $mod+q kill
 
+# wofi
 bindsym $mod+d exec pgrep wofi || wofi -Ii --lines=10 --show drun
 
 #brave
@@ -93,6 +94,7 @@ bindsym $mod+f exec kitty -1 ranger
 
 #editor
 bindsym $mod+t exec pgrep reposelect.sh || ~/.config/sway/scripts/reposelect.sh  
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -127,9 +129,9 @@ bindsym $mod+v split v
 bindsym $mod+Shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $sup+q layout stacking
+bindsym $sup+w layout tabbed
+bindsym $sup+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -188,8 +190,9 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Shift+r reload
 # exit sway
 bindsym $mod+Shift+e exit
+
 #lock
-bindsym $mod+Shift+p exec 'swaylock' 
+bindsym $mod+Shift+p exec "swaylock"
 
 
 # resize window (you can also use the mouse for that)
@@ -230,7 +233,12 @@ input 1739:52756:SYNA32A0:00_06CB:CE14_Touchpad {
         dwt enabled
 }
 
+# Auto-run
 
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec systemctl --user start sway-session.target
 exec /usr/lib/polkit-kde-authentication-agent-1
 exec /usr/lib/xdg-desktop-portal --replace
 exec wl-paste -t text --watch clipman store

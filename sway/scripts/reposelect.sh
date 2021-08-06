@@ -6,8 +6,8 @@ repo=$(echo "$repos" |wofi -i --show dmenu --lines=$lines)
 
 [ -z "$repo" ] && exit
 echo $repo
-repo=$(echo "/home/ajrx/Repos/${repo:1}" | sed -r "s/ //")
+repo=$(echo "/home/ajrx/GitRepos/${repo:1}" | sed -r "s/ //")
 
 echo "$repo"
 cd $repo
-kitty -1 nvim . -c "NvimTreeOpen"
+kitty -1 nvim . 
