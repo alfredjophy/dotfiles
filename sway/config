@@ -20,7 +20,7 @@ for_window [app_id="^(Brave-browser|Element|electron|lutris)"] opacity 0.99
 #include 
 
 # Enable floating
-for_window [app_id="^(org.kde.kdeconnect.daemon|dmenu|pavucontrol-qt|songrec|electron|chromium|org.kde.polkit-kde-authentication-agent-1|Popsicle|fragments)$"] floating enable
+for_window [app_id="^(org.kde.kdeconnect.daemon|dmenu|pavucontrol-qt|songrec|electron|chromium|org.kde.polkit-kde-authentication-agent-1|Popsicle|fragments|org.kde.kdeconnect-urlhandler)$"] floating enable
 for_window [class="^(Bitwarden|XEyes)$"] floating enable
 
 # Inhibit Idle if a window is fullscreen
@@ -37,7 +37,7 @@ smart_gaps on
 focus_follows_mouse yes
 
 # Wallpaper
-exec swaybg -i /home/ajrx/.config/sway/wallpaper.png
+output * bg /home/ajrx/.config/sway/wallpaper.png fill
 
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec swayidle -w timeout 300 'swaylock --grace=5' timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
