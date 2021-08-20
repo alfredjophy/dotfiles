@@ -20,7 +20,7 @@ for_window [app_id="^(Brave-browser|Element|electron|lutris)"] opacity 0.99
 #include 
 
 # Enable floating
-for_window [app_id="^(org.kde.kdeconnect.daemon|dmenu|pavucontrol-qt|songrec|electron|chromium|org.kde.polkit-kde-authentication-agent-1|Popsicle|fragments|org.kde.kdeconnect-urlhandler)$"] floating enable
+for_window [app_id="^(org.kde.kdeconnect.daemon|dmenu|pavucontrol-qt|songrec|electron|chromium|org.kde.polkit-kde-authentication-agent-1|Popsicle|fragments|org.kde.kdeconnect-urlhandler|lutris|org.gnome.TwentyFortyEight)$"] floating enable
 for_window [class="^(Bitwarden|XEyes)$"] floating enable
 
 # Inhibit Idle if a window is fullscreen
@@ -233,8 +233,10 @@ input 1739:52756:SYNA32A0:00_06CB:CE14_Touchpad {
         dwt enabled
 }
 
-# Auto-run
+# FreeSync
+output * adaptive_sync on
 
+# Auto-run
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
@@ -248,3 +250,4 @@ exec waybar -c ~/.config/waybar/config -s ~/.config/waybar/style.css
 exec /usr/lib/kdeconnectd
 exec kdeconnect-indicator
 include /etc/sway/config.d/*
+
