@@ -20,7 +20,7 @@ for_window [app_id="^(Brave-browser|Element|electron|lutris)"] opacity 0.99
 #include 
 
 # Enable floating
-for_window [app_id="^(org.kde.kdeconnect.daemon|dmenu|pavucontrol-qt|songrec|electron|chromium|org.kde.polkit-kde-authentication-agent-1|Popsicle|fragments|org.kde.kdeconnect-urlhandler|lutris|org.gnome.TwentyFortyEight)$"] floating enable
+for_window [app_id="^(org.kde.kdeconnect.daemon|dmenu|pavucontrol-qt|songrec|electron|chromium|org.kde.polkit-kde-authentication-agent-1|Popsicle|fragments|org.kde.kdeconnect-urlhandler|lutris|org.gnome.TwentyFortyEight|com.nextcloud.desktopclient.nextcloud|org.kde.kdeconnect-indicator)$"] floating enable
 for_window [class="^(Bitwarden|XEyes)$"] floating enable
 
 # Inhibit Idle if a window is fullscreen
@@ -40,9 +40,8 @@ focus_follows_mouse yes
 output * bg /home/ajrx/.config/sway/wallpaper.png fill
 
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec swayidle -w timeout 300 'swaylock --grace=5' timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
-exec swayidle lock 'swaymsg "output * dpms on"&& swaylock'
-exec swayidle unlock 'kill -s 1 $(pgrep swaylock)'
+exec swayidle -w timeout 300 'swaylock -C$HOME/.config/swaylock/config.idle' timeout 420 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' before-sleep 'swaylock'
+exec swayidle lock 'swaymsg "output * dpms on"&& swaylock' unlock 'kill -s 1 $(pgrep swaylock)'
 
 # KEY BINDINGS
 
@@ -73,9 +72,6 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec kitty -1
-
-#search
-bindsym $sup+s exec pgrep pgrep wofi || /home/ajrx/.config/sway/scripts/search.sh
 
 # kill focused window
 bindsym $mod+q kill
@@ -247,7 +243,6 @@ exec wl-paste -t text --watch clipman store
 exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
 exec udiskie -a 
 exec waybar -c ~/.config/waybar/config -s ~/.config/waybar/style.css
-exec /usr/lib/kdeconnectd
 exec kdeconnect-indicator
-include /etc/sway/config.d/*
+exec sleep 5 && nohup nextcloud > /dev/null 2>/dev/null
 
