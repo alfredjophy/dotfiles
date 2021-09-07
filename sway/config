@@ -2,9 +2,6 @@
 set $mod Mod1
 set $sup Mod4
 
-set $mod Mod1
-set $sup Mod4
-
 font pango:monospace 8
 xwayland enable
 
@@ -20,7 +17,7 @@ for_window [app_id="^(Brave-browser|Element|electron|lutris)"] opacity 0.99
 #include 
 
 # Enable floating
-for_window [app_id="^(org.kde.kdeconnect.daemon|dmenu|pavucontrol-qt|songrec|electron|chromium|org.kde.polkit-kde-authentication-agent-1|Popsicle|fragments|org.kde.kdeconnect-urlhandler|lutris|org.gnome.TwentyFortyEight|com.nextcloud.desktopclient.nextcloud|org.kde.kdeconnect-indicator)$"] floating enable
+for_window [app_id="^(org.kde.kdeconnect.daemon|dmenu|pavucontrol-qt|songrec|electron|chromium|org.kde.polkit-kde-authentication-agent-1|Popsicle|fragments|org.kde.kdeconnect-urlhandler|lutris|org.gnome.TwentyFortyEight|com.nextcloud.desktopclient.nextcloud|org.kde.kdeconnect-indicator|audacious|)$"] floating enable
 for_window [class="^(Bitwarden|XEyes)$"] floating enable
 
 # Inhibit Idle if a window is fullscreen
@@ -52,7 +49,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle 
 
 #brightness controls
-bindsym XF86MonBrightnessDown exec brightnessctl set 2%-
+bindsym XF86MonBrightnessDown exec brightnessctl set 2%- 
 bindsym XF86MonBrightnessUp exec brightnessctl set +2% 
 
 #media keys
@@ -66,6 +63,8 @@ bindsym $sup+Print exec grimshot save active
 bindsym Shift+Print exec grimshot save window
 bindsym $mod+Print exec grimshot save area 	
 
+#swaync notification centre toggle
+bindsym $mod+n exec swaync-client -t
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -242,6 +241,7 @@ exec /usr/lib/xdg-desktop-portal --replace
 exec wl-paste -t text --watch clipman store
 exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
 exec udiskie -a 
+exec swaync 
 exec waybar -c ~/.config/waybar/config -s ~/.config/waybar/style.css
 exec kdeconnect-indicator
 exec sleep 5 && nohup nextcloud > /dev/null 2>/dev/null
