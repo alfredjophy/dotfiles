@@ -19,7 +19,9 @@ alias git_root='git rev-parse --show-toplevel'
 alias rm='trash'
 alias vpn-toggle='ip addr | grep wg >> /dev/zero && sudo wg-quick down wg0 || sudo wg-quick up wg0'
 alias lf='ranger .'
+
 . $HOME/.config/user-dirs.dirs.fish
+
 motivate
 
 starship init fish | source

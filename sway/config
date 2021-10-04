@@ -5,6 +5,10 @@ set $sup Mod4
 font pango:monospace 8
 xwayland enable
 
+
+set $term kitty -1
+set $browser firefox
+
 # Window Management
 
 #::::::::disable_window_border::::::::                                                                  
@@ -14,20 +18,29 @@ for_window [app_id="^.*"] border pixel 0
 #::::::::set transperancy::::::::::::
 for_window [class="^(Github Desktop|Signal|Brave-browser|Signal-desktop)$"] opacity 0.99
 for_window [app_id="^(Brave-browser|Element|electron|lutris)"] opacity 0.99
-#include 
 
-# Enable floating
-for_window [app_id="^(org.kde.kdeconnect.daemon|dmenu|pavucontrol-qt|songrec|electron|chromium|org.kde.polkit-kde-authentication-agent-1|Popsicle|fragments|org.kde.kdeconnect-urlhandler|lutris|org.gnome.TwentyFortyEight|com.nextcloud.desktopclient.nextcloud|org.kde.kdeconnect-indicator|audacious|)$"] floating enable
+#:::::::Enable floating:::::::::::::
+for_window [app_id="^(org.kde.kdeconnect.daemon|dmenu|pavucontrol-qt|songrec|electron|chromium|org.kde.polkit-kde-authentication-agent-1|Popsicle|fragments|org.kde.kdeconnect-urlhandler|lutris|org.gnome.TwentyFortyEight|com.nextcloud.desktopclient.nextcloud|org.kde.kdeconnect-indicator|audacious|kvantummanager|qt5ct|com.github.wwmm.easyeffects)$"] floating enable
 for_window [class="^(Bitwarden|XEyes)$"] floating enable
+for_window [title="^(Picture-in-Picture)$"] floating enable
+for_window [title="Copying *"] floating enable
+for_window [title="Moving *"] floating enable
+for_window [title="Firefox — Sharing Indicator"] floating enable
 
-# Inhibit Idle if a window is fullscreen
+#:::::;;;apps to hide:::::::::
+for_window [title="Firefox — Sharing Indicator"] move scratchpad
+
+#::::Inhibit Idle if a window is fullscreen:::;
 for_window [class="^.*"] inhibit_idle fullscreen
 for_window [app_id="^.*"] inhibit_idle fullscreen
+
+#::::::::::fullscreen apps:::::::::
+for_window [class="qemu-system-x86_64"] fullscreen
 
 default_border none
 
 set $default_gaps_inner 2                                                                                
-set $default_gaps_outer 2                                                                                 
+set $default_gaps_outer 1                                                                                 
 gaps inner $default_gaps_inner                                                                            
 gaps outer $default_gaps_outer                                                                            	
 smart_gaps on                                                                                             
@@ -70,7 +83,7 @@ bindsym $mod+n exec swaync-client -t
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty -1
+bindsym $mod+Return exec $term
 
 # kill focused window
 bindsym $mod+q kill
@@ -78,23 +91,23 @@ bindsym $mod+q kill
 # wofi
 bindsym $mod+d exec pgrep wofi || wofi -Ii --lines=10 --show drun
 
+#window switcher
+bindsym $mod+Tab exec ~/.config/sway/scripts/windowswitcher
+
 #brave
-bindsym $mod+b exec /usr/bin/brave --profile-directory=Default
+bindsym $mod+b exec $browser
 
 #clipman
 bindsym $mod+c exec pgrep wofi || clipman pick -t wofi
 
 #ranger
-bindsym $mod+f exec kitty -1 ranger
-
-#editor
-bindsym $mod+t exec pgrep reposelect.sh || ~/.config/sway/scripts/reposelect.sh  
+bindsym $mod+f exec $term ranger
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -103,10 +116,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -115,10 +128,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $sup+Shift+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $sup+Shift+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+Shift+f fullscreen toggle
@@ -137,11 +150,8 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# focus the child container
-#bindsym $mod+d focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -193,11 +203,6 @@ bindsym $mod+Shift+p exec "swaylock"
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
@@ -216,16 +221,18 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
 #scratchpad 
+
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 include /etc/sway/config.d/*
 input 1739:52756:SYNA32A0:00_06CB:CE14_Touchpad { 
-        tap enabled
-        natural_scroll enabled
-        accel_profile "adaptive"
-        dwt enabled
+    tap enabled
+    natural_scroll enabled
+    accel_profile "adaptive"
+    dwt enabled
 }
 
 # FreeSync
@@ -245,4 +252,3 @@ exec swaync
 exec waybar -c ~/.config/waybar/config -s ~/.config/waybar/style.css
 exec kdeconnect-indicator
 exec sleep 5 && nohup nextcloud > /dev/null 2>/dev/null
-
