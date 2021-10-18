@@ -2,14 +2,20 @@
 set $mod Mod1
 set $sup Mod4
 
-font pango:monospace 8
+font Source Code Pro 12
 xwayland enable
-
 
 set $term kitty -1
 set $browser firefox
 
 # Window Management
+client.background 000000
+#client.option  border background font               
+client.focused 000000f0 000000f0 fffffff0 390994 000000
+client.focused_inactive 000000f0 000000f0 000000 000000
+client.unfocused 0b0217f0 0b0217f0 fffffff0 000000 000000
+client.urgent ffffff 000000 ffffff 000000 ffffff
+client.placeholder ffffff 000000 ffffff 000000 ffffff
 
 #::::::::disable_window_border::::::::                                                                  
 for_window [class="^.*"] border pixel 0                                                                   
@@ -88,6 +94,9 @@ bindsym $mod+Return exec $term
 # kill focused window
 bindsym $mod+q kill
 
+#toggle sticky
+bindsym $mod+p sticky toggle
+
 # wofi
 bindsym $mod+d exec pgrep wofi || wofi -Ii --lines=10 --show drun
 
@@ -128,10 +137,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $sup+Shift+h split h
+bindsym $mod+i split h
 
 # split in vertical orientation
-bindsym $sup+Shift+v split v
+bindsym $mod+o split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+Shift+f fullscreen toggle
@@ -178,7 +187,6 @@ bindsym $mod+0 workspace number $ws10
 bindsym $mod+Ctrl+left workspace prev
 bindsym $mod+Ctrl+right workspace next
 
-
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
@@ -198,7 +206,6 @@ bindsym $mod+Shift+e exit
 
 #lock
 bindsym $mod+Shift+p exec "swaylock"
-
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -223,7 +230,6 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #scratchpad 
-
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 

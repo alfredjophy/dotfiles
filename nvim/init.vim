@@ -69,7 +69,7 @@ Plug 'karb94/neoscroll.nvim'
 
 call plug#end()
 
-let g:better_escape_shortcut = ['fj','jf']
+let g:better_escape_shortcut = ['fj','jf','FJ','JF']
 
 colorscheme onedark
 highlight Comment cterm=italic gui=italic
