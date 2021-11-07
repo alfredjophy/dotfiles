@@ -11,11 +11,11 @@ set $browser firefox
 # Window Management
 client.background 000000
 #client.option  border background font               
-client.focused 000000f0 000000f0 fffffff0 390994 000000
-client.focused_inactive 000000f0 000000f0 000000 000000
-client.unfocused 0b0217f0 0b0217f0 fffffff0 000000 000000
-client.urgent ffffff 000000 ffffff 000000 ffffff
-client.placeholder ffffff 000000 ffffff 000000 ffffff
+client.focused 000000f0 000000f0 ffffff
+client.focused_inactive 000000f0 000000f0 fffffff0
+client.unfocused 0b0217f0 0b0217f0 dbc7c8aa 
+client.urgent ffffff 000000 ffffff 
+client.placeholder ffffff 000000 ffffff 
 
 #::::::::disable_window_border::::::::                                                                  
 for_window [class="^.*"] border pixel 0                                                                   
@@ -26,12 +26,13 @@ for_window [class="^(Github Desktop|Signal|Brave-browser|Signal-desktop)$"] opac
 for_window [app_id="^(Brave-browser|Element|electron|lutris)"] opacity 0.99
 
 #:::::::Enable floating:::::::::::::
-for_window [app_id="^(org.kde.kdeconnect.daemon|dmenu|pavucontrol-qt|songrec|electron|chromium|org.kde.polkit-kde-authentication-agent-1|Popsicle|fragments|org.kde.kdeconnect-urlhandler|lutris|org.gnome.TwentyFortyEight|com.nextcloud.desktopclient.nextcloud|org.kde.kdeconnect-indicator|audacious|kvantummanager|qt5ct|com.github.wwmm.easyeffects)$"] floating enable
+for_window [app_id="^(org.kde.kdeconnect.daemon|dmenu|pavucontrol-qt|songrec|electron|chromium|org.kde.polkit-kde-authentication-agent-1|Popsicle|fragments|org.kde.kdeconnect-urlhandler|lutris|org.gnome.TwentyFortyEight|com.nextcloud.desktopclient.nextcloud|org.kde.kdeconnect-indicator|audacious|kvantummanager|qt5ct|com.github.wwmm.easyeffects|com.rafaelmardojai.Blanket)$"] floating enable
 for_window [class="^(Bitwarden|XEyes)$"] floating enable
 for_window [title="^(Picture-in-Picture)$"] floating enable
 for_window [title="Copying *"] floating enable
 for_window [title="Moving *"] floating enable
 for_window [title="Firefox — Sharing Indicator"] floating enable
+for_window [title="Progress Dialog — Dolphin"] floating enable
 
 #:::::;;;apps to hide:::::::::
 for_window [title="Firefox — Sharing Indicator"] move scratchpad
@@ -42,7 +43,10 @@ for_window [app_id="^.*"] inhibit_idle fullscreen
 
 #::::::::::fullscreen apps:::::::::
 for_window [class="qemu-system-x86_64"] fullscreen
+for_window [app_id="mpv"] fullscreen
+for_window [app_id="Waydroid"] fullscreen
 
+for_window [title="Picture-in-Picture"] sticky enable
 default_border none
 
 set $default_gaps_inner 2                                                                                
@@ -101,7 +105,8 @@ bindsym $mod+p sticky toggle
 bindsym $mod+d exec pgrep wofi || wofi -Ii --lines=10 --show drun
 
 #window switcher
-bindsym $mod+Tab exec ~/.config/sway/scripts/windowswitcher
+bindsym $mod+Tab exec "python ~/.config/sway/scripts/__pycache__/windowswitcher.cpython-39.pyc"
+
 
 #brave
 bindsym $mod+b exec $browser

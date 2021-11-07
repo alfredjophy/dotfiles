@@ -1,3 +1,11 @@
+set -l xdg_data_home $XDG_DATA_HOME ~/.local/share
+set -gx --path XDG_DATA_DIRS $xdg_data_home[1]/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
+
+for flatpakdir in ~/.local/share/flatpak/exports/bin /var/lib/flatpak/exports/bin
+    if test -d $flatpakdir
+        contains $flatpakdir $PATH; or set -a PATH $flatpakdir
+    end
+end
 export PATH=/bin/lscript:/bin/lscript:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/ajrx/.local/bin:/home/ajrx/go/bin
 
 #custom aliases
@@ -18,7 +26,6 @@ alias of='onefetch'
 alias git_root='git rev-parse --show-toplevel'
 alias rm='trash'
 alias lf='ranger .'
-
 . $HOME/.config/user-dirs.dirs.fish
 
 motivate
