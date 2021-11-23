@@ -67,6 +67,10 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend upda
 
 Plug 'karb94/neoscroll.nvim'
 
+Plug 'vim-pandoc/vim-pandoc'
+
+Plug 'vim-pandoc/vim-pandoc-syntax' 
+
 call plug#end()
 
 let g:better_escape_shortcut = ['fj','jf','FJ','JF']

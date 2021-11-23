@@ -36,6 +36,7 @@ for_window [title="Progress Dialog — Dolphin"] floating enable
 
 #:::::;;;apps to hide:::::::::
 for_window [title="Firefox — Sharing Indicator"] move scratchpad
+for_window [title="Spotify *"] move scratchpad
 
 #::::Inhibit Idle if a window is fullscreen:::;
 for_window [class="^.*"] inhibit_idle fullscreen
@@ -44,9 +45,9 @@ for_window [app_id="^.*"] inhibit_idle fullscreen
 #::::::::::fullscreen apps:::::::::
 for_window [class="qemu-system-x86_64"] fullscreen
 for_window [app_id="mpv"] fullscreen
-for_window [app_id="Waydroid"] fullscreen
 
 for_window [title="Picture-in-Picture"] sticky enable
+
 default_border none
 
 set $default_gaps_inner 2                                                                                
@@ -107,8 +108,6 @@ bindsym $mod+d exec pgrep wofi || wofi -Ii --lines=10 --show drun
 #window switcher
 bindsym $mod+Tab exec "python ~/.config/sway/scripts/__pycache__/windowswitcher.cpython-39.pyc"
 
-
-#brave
 bindsym $mod+b exec $browser
 
 #clipman

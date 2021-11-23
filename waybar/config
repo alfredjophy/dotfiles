@@ -2,7 +2,7 @@
     "layer": "bottom", // Waybar at top layer
         "height": 30, // Waybar height (to be removed for auto height)
         "modules-left":["battery","cpu","memory","temperature","backlight","tray","sway/mode"],
-        "modules-center":["clock"],
+        "modules-center":["clock","custom/notifications"],
         "modules-right": ["sway/workspaces","idle_inhibitor", "pulseaudio","bluetooth","network"], 
         "sway/workspaces": {
             "disable-scroll-wraparound" : true,
@@ -101,5 +101,5 @@
         "tray": {
             "icon-size":21,
             "spacing": 10
-        }
+        },
 }

@@ -26,6 +26,7 @@ alias of='onefetch'
 alias git_root='git rev-parse --show-toplevel'
 alias rm='trash'
 alias lf='ranger .'
+alias pkg-browse="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
 . $HOME/.config/user-dirs.dirs.fish
 
 motivate
