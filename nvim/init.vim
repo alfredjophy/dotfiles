@@ -29,11 +29,17 @@ inoremap <expr> <S-Tab> pumvisible() ? '<C-P>' : '<Tab>'
 noremap ; :
 noremap G Gzz
 
-map <silent><leader>f :NvimTreeToggle<cr>
+map <silent><leader>f <cmd>CHADopen<cr>
 map <silent><c-l> :noh<cr>
 map <silent><leader>t :lua require("FTerm").toggle()<cr>
-map <silent><leader>p :CocCommand prettier.formatFile<cr>
 map <silent><leader>R :NvimTreeRefresh<cr>
+
+" Formatting options
+map <silent><leader>p :echo "Formatter not specified!"<cr>
+
+autocmd fileType javascripts,html,css   map <silent><leader>p :CocCommand prettier.formatFile<cr>
+autocmd fileType c,cpp  map <silent><leader>p :%!astyle <cr>
+
 
 tmap <silent><leader>t <cmd>lua require("FTerm").toggle()<cr>
 
@@ -41,21 +47,21 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
+
 Plug 'preservim/nerdcommenter'
 
 Plug 'neovim/nvim-lspconfig'
 
 Plug 'terryma/vim-smooth-scroll'
 
+Plug 'norcalli/nvim-colorizer.lua'
+
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'joshdick/onedark.vim'
 
 Plug 'numtostr/FTerm.nvim'
-
-Plug 'kyazdani42/nvim-web-devicons' " for file icons
-
-Plug 'kyazdani42/nvim-tree.lua'
 
 Plug 'akinsho/nvim-bufferline.lua'
 
@@ -70,6 +76,8 @@ Plug 'karb94/neoscroll.nvim'
 Plug 'vim-pandoc/vim-pandoc'
 
 Plug 'vim-pandoc/vim-pandoc-syntax' 
+
+Plug 'mhinz/vim-startify'
 
 call plug#end()
 
@@ -119,10 +127,7 @@ require('neoscroll').setup({
             post_hook = nil,              -- Function to run after the scrolling animation ends
     }
 )
-require'nvim-tree'.setup()
+require'colorizer'.setup()
 END
 
-" autocommand
-autocmd VimEnter * :NvimTreeToggle
-autocmd VimEnter * :wincmd p
 

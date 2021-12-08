@@ -26,6 +26,7 @@
         },
         "clock": {
             "format": "{:%H:%M | %a %Y %m %d }",
+            "on-click" : "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
             "tooltip":false
         },
         "cpu": {

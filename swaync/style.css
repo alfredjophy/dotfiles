@@ -13,7 +13,7 @@
     font-family: Source Code Pro, Helvetica, Arial, sans-serif;
     font-size: 17px;
     color: #ffffff;
-    border-radius:3px;
+    border-radius: 0;
 }
 .notification-row {
   outline: none;
@@ -23,16 +23,14 @@
 }
 
 .notification {
-  border-radius: 10px;
   margin: 6px 12px;
-  box-shadow: 0px 2px 4px 2px rgba(10,1,22, 0.9);
+  box-shadow: none;
   padding: 0;
 }
 
 .notification-content {
   background: transparent;
   padding: 6px;
-  border-radius: 10px;
 }
 
 .close-button {
@@ -65,7 +63,7 @@
 }
 
 .notification-default-action {
-  border-radius: 10px;
+  border-radius: 0px;
 }
 
 /* When alternative actions are visible */
@@ -81,10 +79,10 @@
 
 /* add bottom border radius to eliminate clipping */
 .notification-action:first-child {
-  border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 0px;
 }
 .notification-action:last-child {
-  border-bottom-right-radius: 10px;
+  border-bottom-right-radius: 0px;
 }
 
 .image {
@@ -93,7 +91,7 @@
 .body-image {
   margin-top: 6px;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 0px;
 }
 
 .summary {
@@ -123,7 +121,7 @@
   background: @bg;
   border: 1px solid @border-color;
   box-shadow: none;
-  border-radius: 10px;
+  border-radius: 0px;
 }
 .control-center-clear-all:hover {
   background: @bg-hover;
