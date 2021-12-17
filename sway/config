@@ -26,7 +26,7 @@ for_window [class="^(Github Desktop|Signal|Brave-browser|Signal-desktop)$"] opac
 for_window [app_id="^(Brave-browser|Element|electron|lutris)"] opacity 0.99
 
 #:::::::Enable floating:::::::::::::
-for_window [app_id="^(org.kde.kdeconnect.daemon|dmenu|pavucontrol-qt|songrec|electron|chromium|org.kde.polkit-kde-authentication-agent-1|Popsicle|fragments|org.kde.kdeconnect-urlhandler|lutris|org.gnome.TwentyFortyEight|com.nextcloud.desktopclient.nextcloud|org.kde.kdeconnect-indicator|audacious|kvantummanager|qt5ct|com.github.wwmm.easyeffects|com.rafaelmardojai.Blanket)$"] floating enable
+for_window [app_id="^(Bitwarden|org.kde.kdeconnect.daemon|dmenu|pavucontrol-qt|songrec|electron|chromium|org.kde.polkit-kde-authentication-agent-1|Popsicle|fragments|org.kde.kdeconnect-urlhandler|lutris|org.gnome.TwentyFortyEight|com.nextcloud.desktopclient.nextcloud|org.kde.kdeconnect-indicator|audacious|kvantummanager|qt5ct|com.github.wwmm.easyeffects|com.rafaelmardojai.Blanket)$"] floating enable
 for_window [class="^(Bitwarden|XEyes)$"] floating enable
 for_window [title="^(Picture-in-Picture)$"] floating enable
 for_window [title="Copying *"] floating enable
@@ -86,6 +86,7 @@ bindsym Print exec grimshot save output
 bindsym $sup+Print exec grimshot save active 
 bindsym Shift+Print exec grimshot save window
 bindsym $mod+Print exec grimshot save area 	
+bindsym $mod+Shift+c exec farge --notify --expire-time 3000
 
 #swaync notification centre toggle
 bindsym $mod+n exec swaync-client -t

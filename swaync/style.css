@@ -3,7 +3,7 @@
  */
 
 @define-color border-color rgb(7, 7, 7);
-@define-color bg rgba(10,1,22,0.9);
+@define-color bg rgba(10,1,22,0.95);
 @define-color bg-hover rgba(10,1,22,1);
 @define-color bg-focus rgba(10,1,22,0.3);
 @define-color bg-selected rgb(0, 128, 255);

@@ -15,7 +15,7 @@ alias speedtest-cli='speedtest-cli --bytes'
 alias l='ls -CF'
 alias sizeof='dust -bd0'
 alias du='dust'
-alias ip?='curl -4 ifconfig.co && curl -6 ifconfig.co'
+alias ip?='curl -4 ifconfig.co & curl -6 ifconfig.co'
 alias dfg='/usr/bin/git --git-dir=$XDG_REPOSITORIES_DIR/dotfiles --work-tree=$HOME/.config'
 alias update-nativefier-apps='cd ~/.local/bin/ && find . -mindepth 1 -maxdepth 1 -type d -exec nativefier --upgrade {} \; && cd -'
 alias locate='plocate'
@@ -27,6 +27,7 @@ alias git_root='git rev-parse --show-toplevel'
 alias rm='trash'
 alias lf='ranger .'
 alias pkg-browse="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
+
 . $HOME/.config/user-dirs.dirs.fish
 
 motivate
