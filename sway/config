@@ -82,10 +82,10 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 #screenshot
-bindsym Print exec grimshot save output
-bindsym $sup+Print exec grimshot save active 
-bindsym Shift+Print exec grimshot save window
-bindsym $mod+Print exec grimshot save area 	
+bindsym Print exec grimshot --notify save output
+bindsym $sup+Print exec grimshot --notify save active 
+bindsym Shift+Print exec grimshot --notify save window
+bindsym $mod+Print exec grimshot --notify save area 	
 bindsym $mod+Shift+c exec farge --notify --expire-time 3000
 
 #swaync notification centre toggle
@@ -268,6 +268,6 @@ exec udiskie -a
 exec swaync 
 exec waybar -c ~/.config/waybar/config -s ~/.config/waybar/style.css
 exec kdeconnect-indicator
-exec sleep 5 && nohup nextcloud > /dev/null 2>/dev/null
+exec sleep 5 && nextcloud > /dev/null 2>/dev/null
 exec easyeffects  --gapplication-service
 exec kitty -1
