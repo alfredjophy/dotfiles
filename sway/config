@@ -30,6 +30,7 @@ for_window [class="^(Bitwarden|XEyes|scrcpy)$"] floating enable
 for_window [title="^(Picture-in-Picture)$"] floating enable
 for_window [title="Copying *"] floating enable
 for_window [title="Moving *"] floating enable
+for_window [title="Deleting *"] floating enable
 for_window [title="Firefox — Sharing Indicator"] floating enable
 for_window [title="Progress Dialog — Dolphin"] floating enable
 
