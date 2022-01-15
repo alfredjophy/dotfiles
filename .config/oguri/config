@@ -1,0 +1,5 @@
+[output *]
+image=/home/ajrx/.config/sway/wallpaper.png
+filter=nearest
+scaling-mode=fill
+anchor=center
