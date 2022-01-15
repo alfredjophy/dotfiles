@@ -25,7 +25,7 @@ for_window [class="^(Github Desktop|Signal|Brave-browser|Signal-desktop)$"] opac
 for_window [app_id="^(Brave-browser|Element|electron|lutris)"] opacity 0.99
 
 #:::::::Enable floating:::::::::::::
-for_window [app_id="^(Bitwarden|org.kde.kdeconnect.daemon|dmenu|pavucontrol-qt|songrec|electron|org.kde.polkit-kde-authentication-agent-1|Popsicle|fragments|org.kde.kdeconnect-urlhandler|lutris|org.gnome.TwentyFortyEight|com.nextcloud.desktopclient.nextcloud|org.kde.kdeconnect-indicator|audacious|kvantummanager|qt5ct|com.github.wwmm.easyeffects|com.rafaelmardojai.Blanket|obs|code|wofi|qemu-system-x86_64)$"] floating enable
+for_window [app_id="^(Bitwarden|org.kde.kdeconnect.daemon|dmenu|pavucontrol-qt|songrec|electron|org.kde.polkit-kde-authentication-agent-1|Popsicle|fragments|org.kde.kdeconnect-urlhandler|lutris|org.gnome.TwentyFortyEight|com.nextcloud.desktopclient.nextcloud|org.kde.kdeconnect-indicator|audacious|kvantummanager|qt5ct|com.github.wwmm.easyeffects|com.rafaelmardojai.Blanket|obs|code|wofi|qemu-system-x86_64|org.kde.kdeconnect.sms|corectrl)$"] floating enable
 for_window [class="^(Bitwarden|XEyes|scrcpy)$"] floating enable
 for_window [title="^(Picture-in-Picture)$"] floating enable
 for_window [title="Copying *"] floating enable
@@ -43,7 +43,6 @@ for_window [class="^.*"] inhibit_idle fullscreen
 for_window [app_id="^.*"] inhibit_idle fullscreen
 
 #::::::::::fullscreen apps:::::::::
-for_window [class="qemu-system-x86_64"] fullscreen
 for_window [app_id="mpv"] fullscreen
 
 for_window [title="Picture-in-Picture"] sticky enable
@@ -58,7 +57,8 @@ smart_gaps on
 focus_follows_mouse yes
 
 # Wallpaper
-output * bg /home/ajrx/.config/sway/wallpaper.png fill
+exec oguri
+exec swayblur -b 10 -a 2
 
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec swayidle -w timeout 300 'swaylock -C$HOME/.config/swaylock/config.idle' timeout 420 'systemctl suspend' resume 'swaymsg "output * dpms on"' before-sleep 'swaylock'
