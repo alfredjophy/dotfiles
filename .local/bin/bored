@@ -1,0 +1,17 @@
+#!/bin/bash
+
+prefix=~/Videos/Shows
+
+shows=("FRIENDS" "How I Met Your Mother")
+
+set list
+
+for i in "${shows[@]}"; do 
+        list="$list$(fd . "$prefix/$i" -e mkv -e mp4 -e aac -c never)"
+done
+
+#echo "$list"
+
+towatch=$(echo "$list" | shuf -n 1 )
+
+nohup xdg-open "$towatch" > /dev/null 2> /dev/null & exit

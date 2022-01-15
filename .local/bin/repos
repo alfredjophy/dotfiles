@@ -1,0 +1,18 @@
+#!/bin/bash
+_PREV=$(pwd)
+
+repos=$(fd . '/home/ajrx/Projects/' -t d --exact-depth 2 | sed -e "s#/home/ajrx/Projects/##" -e "/dotfiles/d"  )
+
+repo=$(echo "$repos"| fzf --height 60% --layout reverse)
+
+repo=$(echo "/home/ajrx/Projects/$repo" | sed -r "s/ //")
+
+
+cd "$repo"
+if [[ -z "$1" ]]; then
+    nvim
+else
+    "$SHELL"
+fi
+
+cd "$_PREV"

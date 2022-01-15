@@ -1,0 +1,20 @@
+#!/bin/dash
+. "$HOME/.config/user-dirs.dirs"
+
+_PREV=$(pwd)
+cd "$XDG_NOTES_DIR" 
+
+if [ -z "$1" ] ; then
+    find "$XDG_NOTES_DIR/" -type f |fzf --height 20% --layout reverse --preview 'clear && mdcat {}' --bind 'space:execute(clear && mdcat {} | bat --paging always -p)' --bind 'enter:execute(clear && nvim {})'
+    cd "$_PREV"
+    exit
+fi
+
+touch "$XDG_NOTES_DIR/$1.txt"
+timestamp=$(date +"%Y-%b-%d-%R")
+printf "_%s"$timestamp >> "$XDG_NOTES_DIR/$1.txt"
+printf "_\n***" >> "$XDG_NOTES_DIR/$1.txt"
+
+nvim "$1.txt"
+cd "$_PREV"
+

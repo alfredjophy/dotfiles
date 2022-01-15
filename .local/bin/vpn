@@ -1,0 +1,33 @@
+#!/bin/dash
+
+vpn_status () {
+    ip link | grep wg0 >> /dev/null  && echo 1 || echo 0
+}
+
+vpn_disconnect (){
+    sudo wg-quick down wg0 >> /dev/null && echo "Disconnected Successfully" || echo "Disconnect failed"
+}
+
+vpn_connect (){
+    echo "Connecting..."
+    sudo wg-quick up wg0 >> /dev/null && echo "Connected Successfully" || echo "Connection failed"
+}
+
+if [ $# -eq 0 ]; then
+    if [ $(vpn_status) -eq 1 ]; then
+        echo "VPN status : Connected"
+    else
+        echo "VPN status : Disconnected"
+    fi
+    exit
+fi
+
+if [ $1 = "connect" ]; then
+    vpn_connect
+elif [ $1 = "disconnect" ]; then
+    vpn_disconnect
+else 
+    echo "Option not recognized"
+fi
+
+exit
