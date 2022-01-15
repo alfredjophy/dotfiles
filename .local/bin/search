@@ -1,0 +1,60 @@
+#!/bin/bash 
+
+searchterm=$1
+
+[ -z "$searchterm" ] && exit
+
+#check if url
+#check if search query
+if [[ ${searchterm:0:1} =~ "?" || ${searchterm:0:1} =~ "!" ]] ; then 
+        if [[ ${searchterm:0:1} =~ "?" ]];then 
+                searchterm="${searchterm/?}"
+        fi
+        query="$searchterm $2"
+        nohup xdg-open "https://search.brave.com/search?q=$query" > /dev/null &> /dev/null & exit
+        exit
+fi
+
+query=${searchterm// /+}
+results="Search with DuckDuckGo
+Search with Brave
+Search with Startpage
+Search with SearX
+"
+#if not search local files
+localFiles=$(plocate $searchterm)
+
+if [ -z "$localFiles" ]
+        then results="$results
+                No Local Files Found"
+else
+
+OLDIFS=$IFS       
+IFS='
+'
+        for i in "$localFiles"
+        do
+                results="$results$(exa --icons -d $i 2> /dev/null)"
+        done
+fi
+IFS=$OLDIFS
+selected=$(echo "$results" | fzf --height=10%)
+case $selected in
+        "Search with DuckDuckGo")
+                selected="https://www.duckduckgo.com/?q=$query"
+                ;;
+        "Search with Brave")
+                selected="https://search.brave.com/search?q=$query"
+                ;;
+        "Search with Startpage")
+                selected="https://startpage.com/do/?q=$query"
+                ;;
+        "Search with SearX")
+                selected="https://searx.bar/search?q=$query"
+                ;;
+        *)
+                selected=${selected:1}
+                ;;
+esac
+
+nohup xdg-open $selected > /dev/null &> /dev/null & exit
