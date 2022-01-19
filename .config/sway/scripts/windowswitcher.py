@@ -3,26 +3,24 @@
 
 import subprocess
 import json
-import re
 import gi
+import re
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 
 def parse_icon_name(app_name):
-  if(app_name.startswith("FFPWA")==False):
-      app_name = app_name.lower()
   if app_name in icon_names:
     return icon_names[app_name]
   if app_name.endswith('telegram_desktop') or app_name == "Telegram" or app_name == "telegramdesktop":
     return 'telegram'
   if app_name.startswith('gimp'):
     return 'gimp'
+  if(app_name.startswith("FFPWA")==False):
+      app_name = app_name.lower()
   return app_name
 
 def get_icon(app_name):
   icon_info = icon_theme.lookup_icon(parse_icon_name(app_name), 48, 0)
-  if icon_info == None:
-    print("Failed to get icon for: " + app_name)
   return icon_info.get_filename() if icon_info != None else default_icon_file
 
 def get_cons(tree):
