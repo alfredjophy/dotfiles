@@ -88,7 +88,7 @@
                 "car": "",
                 "default": ["", "", ""]
             },
-            "on-click-right": "pavucontrol-qt",
+            "on-click-right": "env QT_QPA_PLATFORMTHEME=qt5ct pavucontrol-qt",
             "tooltip":false
         },
         "bluetooth": {
