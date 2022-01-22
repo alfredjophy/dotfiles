@@ -1,5 +1,5 @@
 [output *]
-image=/home/ajrx/.config/sway/wallpaper.png
+image=/home/ajrx/.local/share/wallpapers/purple.png
 filter=nearest
 scaling-mode=fill
 anchor=center

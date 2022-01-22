@@ -108,7 +108,7 @@ bindsym $mod+p sticky toggle
 bindsym $mod+d exec pgrep wofi || wofi -Ii --lines=10 --show drun
 
 #window switcher
-bindsym $mod+Tab exec "pgrep wofi || python ~/.config/sway/scripts/__pycache__/windowswitcher.cpython-310.pyc"
+bindsym $mod+Tab exec "pgrep wofi || sway-windowswitcher"
 
 bindsym $mod+b exec $browser
 
