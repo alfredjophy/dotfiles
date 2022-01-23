@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=KDEConnect Indicator
+Comment=KDEConnect Indicator
+Exec=kdeconnect-indicator
+Icon=kdeconnect
+StartupNotify=false
+Terminal=false
+Type=Application

@@ -213,7 +213,7 @@ bindsym $mod+Shift+e exit
 bindsym $mod+Shift+p exec "swaylock"
 
 #screen on/off toggle
-bindsym $mod+shift+o exec 'swaymsg "output * dpms on"'
+bindsym $mod+shift+o exec 'swaymsg "output * dpms toggle"'
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
