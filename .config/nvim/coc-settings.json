@@ -1,0 +1,4 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": ["css","html","javascript","javascriptreact"],
+    "prettier.tabWidth": 4
+}
