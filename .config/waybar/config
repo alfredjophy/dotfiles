@@ -23,10 +23,10 @@
         "tray": {
             "icon-size": 21,
             "spacing": 10
+
         },
         "clock": {
             "format": "{:%H:%M | %a %Y %m %d }",
-            "on-click" : "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
             "tooltip":false
         },
         "cpu": {

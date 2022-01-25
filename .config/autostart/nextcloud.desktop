@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Nextcloud
 Comment=Nextcloud Synchronisation Service
-Exec=env QT_QPA_PLATFORMTHEME=kvantum nextcloud
+Exec=env QT_QPA_PLATFORMTHEME=kvantum nextcloud --background
 Icon=nextcloud
 StartupNotify=false
 Terminal=false
