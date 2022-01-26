@@ -1,6 +1,7 @@
-# Global Stuff
+# Global Stuf
 set $mod Mod1
 set $sup Mod4
+set $display0 'Chimei Innolux Corporation 0x139D 0x00000000'
 
 font Source Code Pro 12
 xwayland enable
@@ -213,7 +214,7 @@ bindsym $mod+Shift+e exit
 bindsym $mod+Shift+p exec "swaylock"
 
 #screen on/off toggle
-bindsym $mod+shift+o exec 'swaymsg "output * dpms toggle"'
+bindsym $mod+shift+o exec swaymsg "output 'Chimei Innolux Corporation 0x139D 0x00000000' dpms toggle"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -255,8 +256,16 @@ input 9639:64103:CX_2.4G_Receiver_Mouse {
     natural_scroll enabled
 }
 
+bar {
+    swaybar_command waybar
+    position top
+    hidden_state show
+    mode dock
+    modifier Mod4
+}
+
 # FreeSync
-#output 'Chimei Innolux Corporation 0x139D 0x00000000' adaptive_sync on
+output 'Chimei Innolux Corporation 0x139D 0x00000000' adaptive_sync on
 
 # Auto-run
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
@@ -269,6 +278,6 @@ exec wl-paste -t text --watch clipman store
 exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
 exec udiskie -a 
 exec_always pgrep swaync || swaync 
-exec_always pgrep waybar || waybar -c ~/.config/waybar/config -s ~/.config/waybar/style.css
+#exec_always pgrep waybar || waybar -c ~/.config/waybar/config -s ~/.config/waybar/style.css
 exec xdg-autostart-launcher --user
 exec kitty -1
