@@ -1,7 +1,6 @@
 # Global Stuf
 set $mod Mod1
 set $sup Mod4
-set $display0 'Chimei Innolux Corporation 0x139D 0x00000000'
 
 font Source Code Pro 12
 xwayland enable
@@ -9,13 +8,12 @@ xwayland enable
 set $term kitty -1
 set $browser firefox
 
-
 default_border none
-set $default_gaps_inner 2                                                                                
-set $default_gaps_outer 1                                                                                 
-gaps inner $default_gaps_inner                                                                            
-gaps outer $default_gaps_outer                                                                            	
-smart_gaps on                                                                                             
+
+gaps inner 2
+gaps outer 1
+smart_gaps on
+
 focus_follows_mouse yes
 
 #::::::::window borders::::::::::::::::
@@ -208,7 +206,10 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # reload the configuration file
 bindsym $mod+Shift+r reload
 # exit sway
-bindsym $mod+Shift+e exit
+bindsym $mod+Ctrl+e exit
+
+#toggle bar
+bindsym $mod+Shift+e bar 0 mode toggle
 
 #lock
 bindsym $mod+Shift+p exec "swaylock"
@@ -257,11 +258,11 @@ input 9639:64103:CX_2.4G_Receiver_Mouse {
 }
 
 bar {
-    swaybar_command waybar
+    id 0
     position top
-    hidden_state show
     mode dock
     modifier Mod4
+    swaybar_command waybar
 }
 
 # FreeSync

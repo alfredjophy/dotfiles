@@ -1,8 +1,8 @@
 {   "ipc": true,
-    "layer": "bottom", // Waybar at top layer
-        "height": 30, // Waybar height (to be removed for auto height)
+    "layer": "bottom", 
+        "height": 30, 
         "modules-left":["battery","cpu","memory","temperature","backlight","tray","sway/mode"],
-        "modules-center":["clock","custom/notifications"],
+        "modules-center":["clock"],
         "modules-right": ["sway/workspaces","idle_inhibitor", "pulseaudio","bluetooth","network"], 
         "sway/workspaces": {
             "disable-scroll-wraparound" : true,
@@ -23,11 +23,10 @@
         "tray": {
             "icon-size": 21,
             "spacing": 10
-
         },
         "clock": {
             "format": "{:%H:%M | %a %Y %m %d }",
-            "tooltip":false
+            "tooltip":false,
         },
         "cpu": {
             "format": "{usage}% ",
@@ -38,17 +37,14 @@
             "tooltip":false
         },
         "temperature": {
-            // "thermal-zone": 2,
-            // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
             "critical-threshold": 80,
-            // "format-critical": "{temperatureC}°C {icon}",
             "format": "{temperatureC}°C {icon}",
             "format-icons": ["", "", ""],
             "tooltip":false
         },
         "backlight": {
             "format": "{percent}% {icon}",
-            "format-icons": ["", "盛"],
+            "format-icons": [""," ",""],
             "tooltip":false
         },
         "battery": {
@@ -59,7 +55,6 @@
             },
             "format": "{capacity}% {icon}",
             "format-charging": "{capacity}%  ",
-            // "format-good": "", // An empty format will hide the module
             "format-full": "",
             "format-icons": ["", "", "", "", "",""],
             "format-time":"{H}:{M}",
