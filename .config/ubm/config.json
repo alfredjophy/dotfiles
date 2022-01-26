@@ -1,0 +1,62 @@
+{
+    "default_browser": {
+        "browser": "firefox",
+        "profile": ""
+    },
+    "mappings": [
+        {
+            "browser": "firefox",
+            "profile": "dev",
+            "url_patterns": [
+                "localhost",
+                "0.0.0.0",
+                "127.0.0.0",
+                "127.0.0.1"
+            ]
+        },
+        {
+            "browser": "firefoxpwa",
+            "profile": "01FFY6GV3HGM7D04R5Y5ZMXW68",
+            "url_patterns": [
+                "replit.com"
+            ]
+        },
+        {
+            "browser": "firefoxpwa",
+            "profile": "01FKNHAE18RJPNH2Y02Q2XAW38",
+            "url_patterns": [
+                "meet.jit.si"
+            ]
+        },
+        {
+            "browser": "firefoxpwa",
+            "profile": "01FFAZW39PG9F70N1ASEZ17G5K",
+            "url_patterns": [
+                "github.com"
+            ]
+        },
+        {
+            "browser": "firefoxpwa",
+            "profile": "01FFAXQZ8BZMSBM4HJHH97K9X3",
+            "url_patterns": [
+                "reddit.com",
+                "www.reddit.com"
+            ]
+        },
+        {
+            "browser": "brave",
+            "profile": "Profile 6",
+            "url_patterns": [
+                "gog.com",
+                "store.steampowered.com"
+            ]
+        },
+        {
+            "browser": "firefoxpwa",
+            "profile": "01FTB7XHZRQRXT6GR9P5JYKF3M",
+            "url_patterns": [
+                "meet.google.com"
+            ]
+        }
+    ]
+}
