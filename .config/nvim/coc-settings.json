@@ -1,4 +1,24 @@
 {
-    "coc.preferences.formatOnSaveFiletypes": ["css","html","javascript","javascriptreact"],
-    "prettier.tabWidth": 4
+    "coc.preferences.formatOnSaveFiletypes": [
+        "css",
+        "html",
+        "javascript",
+        "javascriptreact",
+        "json"
+    ],
+    "prettier.tabWidth": 4,
+    "languageserver": {
+        "haskell": {
+            "command": "haskell-language-server-wrapper",
+            "args": ["--lsp"],
+            "rootPatterns": [
+                "*.cabal",
+                "stack.yaml",
+                "cabal.project",
+                "package.yaml",
+                "hie.yaml"
+            ],
+            "filetypes": ["haskell", "lhaskell"]
+        }
+    }
 }

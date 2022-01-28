@@ -28,6 +28,7 @@ inoremap <expr> <S-Tab> pumvisible() ? '<C-P>' : '<Tab>'
 
 noremap ; :
 noremap G Gzz
+noremap dd "_dd
 
 map <silent><leader>f <cmd>CHADopen<cr>
 map <silent><c-l> :noh<cr>

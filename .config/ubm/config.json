@@ -57,6 +57,13 @@
             "url_patterns": [
                 "meet.google.com"
             ]
+        },
+        {
+            "browser": "firefox",
+            "profile": "CollegeStuff",
+            "url_patterns": [
+                "docs.google.com"
+            ]
         }
     ]
 }

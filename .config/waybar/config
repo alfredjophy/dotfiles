@@ -20,10 +20,6 @@
             },
             "tooltip":false
         },
-        "tray": {
-            "icon-size": 21,
-            "spacing": 10
-        },
         "clock": {
             "format": "{:%H:%M | %a %Y %m %d }",
             "tooltip":false,
@@ -97,5 +93,5 @@
         "tray": {
             "icon-size":21,
             "spacing": 10
-        },
+        }
 }

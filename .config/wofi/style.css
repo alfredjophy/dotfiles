@@ -34,7 +34,6 @@ window {
     background-color: rgba(11, 2, 23, 0.94);
     opacity: 0.94;
 }
-
 #text {
     margin: 5px;
     border: none;
@@ -43,8 +42,8 @@ window {
     opacity: 0.94;
 }
 #entry:selected {
-    background-color: #912e95;
+    background-color: rgba(117, 36, 122, 0.85);
 }
 #text:selected {
-    background-color: #912e95;
+    background-color: rgba(117, 36, 122, 0.85);
 }
