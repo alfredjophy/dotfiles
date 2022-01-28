@@ -1,5 +1,5 @@
 ## Dotfiles
 
-![image](./images/scrnsht.png)
+![image](./images/result.png)
 
 
