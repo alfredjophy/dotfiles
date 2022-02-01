@@ -38,9 +38,8 @@ map <silent><leader>R :NvimTreeRefresh<cr>
 " Formatting options
 map <silent><leader>p :echo "Formatter not specified!"<cr>
 
-autocmd fileType javascripts,html,css,json  map <silent><leader>p :CocCommand prettier.formatFile<cr>
+autocmd fileType javascripts,html,css,json,markdown  map <silent><leader>p :CocCommand prettier.formatFile<cr>
 autocmd fileType c,cpp map <silent><leader>p :%!astyle <cr>
-
 
 tmap <silent><leader>t <cmd>lua require("FTerm").toggle()<cr>
 
@@ -139,7 +138,5 @@ require('neoscroll').setup({
             post_hook = nil,              -- Function to run after the scrolling animation ends
     }
 )
-require'colorizer'.setup()
+require'colorizer'.setup({'*'},{RRGGBBAA=true,rgb_fn=true,hsl_fn=true,css=true,css_fn=true})
 END
-
-
