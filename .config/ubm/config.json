@@ -62,7 +62,8 @@
             "browser": "firefox",
             "profile": "CollegeStuff",
             "url_patterns": [
-                "docs.google.com"
+                "docs.google.com",
+                "forms.gle"
             ]
         }
     ]

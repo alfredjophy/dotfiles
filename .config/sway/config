@@ -279,6 +279,5 @@ exec wl-paste -t text --watch clipman store
 exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
 exec udiskie -a 
 exec_always pgrep swaync || swaync 
-#exec_always pgrep waybar || waybar -c ~/.config/waybar/config -s ~/.config/waybar/style.css
 exec xdg-autostart-launcher --user
 exec kitty -1
