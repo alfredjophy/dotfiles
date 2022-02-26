@@ -32,7 +32,8 @@
             "browser": "firefoxpwa",
             "profile": "01FFAZW39PG9F70N1ASEZ17G5K",
             "url_patterns": [
-                "github.com"
+                "github.com",
+                "gist.github.com"
             ]
         },
         {
