@@ -45,5 +45,5 @@ window {
     background-color: rgba(117, 36, 122, 0.85);
 }
 #text:selected {
-    background-color: rgba(117, 36, 122, 0.85);
+    background-color: transparent;
 }
