@@ -1,6 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR __fish_initialized:3100
+SETUVAR __fish_initialized:3400
 SETUVAR _fisher_danhper_2F_fish_2D_ssh_2D_agent_files:/home/ajrx/\x2econfig/fish/functions/__ssh_agent_is_started\x2efish\x1e/home/ajrx/\x2econfig/fish/functions/__ssh_agent_start\x2efish\x1e/home/ajrx/\x2econfig/fish/conf\x2ed/fish\x2dssh\x2dagent\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:/home/ajrx/\x2econfig/fish/functions/fisher\x2efish\x1e/home/ajrx/\x2econfig/fish/completions/fisher\x2efish
 SETUVAR _fisher_jorgebucaran_2F_replay_2E_fish_files:/home/ajrx/\x2econfig/fish/functions/replay\x2efish\x1e/home/ajrx/\x2econfig/fish/completions/replay\x2efish
@@ -34,3 +34,4 @@ SETUVAR fish_pager_color_completion:\x1d
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
+SETUVAR fish_pager_color_selected_background:\x2dr

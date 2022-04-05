@@ -64,7 +64,8 @@
             "profile": "CollegeStuff",
             "url_patterns": [
                 "docs.google.com",
-                "forms.gle"
+                "forms.gle",
+                "drive.google.com"
             ]
         }
     ]

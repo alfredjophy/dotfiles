@@ -11,11 +11,11 @@ export PATH=/bin/lscript:/bin/lscript:/usr/local/sbin:/usr/local/bin:/usr/sbin:/
 #custom aliases
 alias 2048='2048 bluered'
 alias update-grub2='sudo grub-mkconfig -o /boot/grub/grub.cfg'
-alias speedtest-cli='speedtest-cli --bytes'
+alias speedtest='speedtest-cli --bytes'
 alias l='ls -CF'
 alias sizeof='dust -bd0'
 alias du='dust'
-alias ip?='curl -4 ifconfig.co & curl -6 ifconfig.co'
+alias ip?='curl -4 ifconfig.co 2> /dev/null || echo IPv4 not found && curl -6 ifconfig.co 2> /dev/null || echo IPv6 not found && true'
 alias dfg='/usr/bin/git --git-dir=$XDG_REPOSITORIES_DIR/dotfiles --work-tree=$HOME'
 alias locate='plocate'
 alias icat='kitty +kitten icat'
@@ -27,6 +27,7 @@ alias rm='trash'
 alias lf='ranger .'
 alias pkg-browse="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
 alias md="mdcat $1 | bat -p"
+alias chroot-debian-recovery='sudo mount /mnt && sudo mount /mnt/boot/efi && sudo arch-chroot /mnt && sudo umount -R /mnt'
 
 . $HOME/.config/user-dirs.dirs.fish
 
