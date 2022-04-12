@@ -263,6 +263,12 @@ input 1356:3302:Sony_Interactive_Entertainment_Wireless_Controller_Touchpad {
     natural_scroll enabled
     accel_profile "adaptive"
 }
+input 1356:3302:Wireless_Controller_Touchpad {
+    tap enabled
+    natural_scroll enabled
+    accel_profile "adaptive"
+
+}
 
 bar {
     id 0
