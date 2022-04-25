@@ -7,8 +7,9 @@
     "coc-prettier": ">=9.2.3",
     "coc-pyright": ">=1.1.235",
     "coc-react-refactor": ">=0.5.0",
+    "coc-rust-analyzer": ">=0.62.0",
     "coc-sh": ">=0.6.1",
     "coc-sql": ">=0.9.0",
-    "coc-tsserver": ">=1.10.0"
+    "coc-tsserver": ">=1.10.1"
   }
 }

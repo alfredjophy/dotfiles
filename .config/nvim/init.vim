@@ -40,6 +40,7 @@ map <silent><leader>p :echo "Formatter not specified!"<cr>
 
 autocmd fileType javascripts,html,css,json,markdown  map <silent><leader>p :CocCommand prettier.formatFile<cr>
 autocmd fileType c,cpp map <silent><leader>p :%!astyle <cr>
+autocmd fileType rust map <silent><leader>p :%!rustfmt <cr>
 
 tmap <silent><leader>t <cmd>lua require("FTerm").toggle()<cr>
 
