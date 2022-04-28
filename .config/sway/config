@@ -45,6 +45,7 @@ for_window [title="Progress Dialog — Dolphin"] floating enable
 #:::::;;;apps to hide:::::::::
 for_window [title="Firefox — Sharing Indicator"] move scratchpad
 for_window [app_id="FFPWA-01FFKCF7GFET9F2VCJDNNFD1FJ"] move scratchpad
+for_window [app_id="FFPWA-01G1MPT8HYED7CKCPKZWWGBPB4"] move scratchpad
 
 #::::Inhibit Idle if a window is fullscreen:::;
 for_window [class="^.*"] inhibit_idle fullscreen
