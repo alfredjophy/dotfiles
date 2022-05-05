@@ -33,7 +33,7 @@ for_window [class="^(Github Desktop|Signal|Brave-browser|Signal-desktop)$"] opac
 for_window [app_id="^(Brave-browser|Element|electron|lutris)"] opacity 0.99
 
 #:::::::Enable floating:::::::::::::
-for_window [app_id="^(wdisplays|Bitwarden|org.kde.kdeconnect.daemon|dmenu|pavucontrol-qt|songrec|electron|org.kde.polkit-kde-authentication-agent-1|Popsicle|fragments|org.kde.kdeconnect-urlhandler|lutris|org.gnome.TwentyFortyEight|com.nextcloud.desktopclient.nextcloud|org.kde.kdeconnect-indicator|audacious|kvantummanager|qt5ct|com.github.wwmm.easyeffects|com.rafaelmardojai.Blanket|obs|code|wofi|qemu-system-x86_64|org.kde.kdeconnect.sms|corectrl|qt6ct|wihotspot-gui|blueberry.py)$"] floating enable
+for_window [app_id="^(wdisplays|Bitwarden|org.kde.kdeconnect.daemon|dmenu|pavucontrol-qt|songrec|electron|org.kde.polkit-kde-authentication-agent-1|Popsicle|fragments|org.kde.kdeconnect-urlhandler|lutris|org.gnome.TwentyFortyEight|com.nextcloud.desktopclient.nextcloud|org.kde.kdeconnect-indicator|audacious|kvantummanager|qt5ct|com.github.wwmm.easyeffects|com.rafaelmardojai.Blanket|obs|code|wofi|qemu-system-x86_64|org.kde.kdeconnect.sms|corectrl|qt6ct|wihotspot-gui|blueberry.py|nm-connection-editor)$"] floating enable
 for_window [class="^(Bitwarden|XEyes|scrcpy|GParted)$"] floating enable
 for_window [title="^(Picture-in-Picture)$"] floating enable
 for_window [title="Copying *"] floating enable
@@ -292,6 +292,6 @@ exec /usr/lib/xdg-desktop-portal --replace
 exec wl-paste -t text --watch clipman store
 exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
 exec udiskie -a 
-exec_always pgrep swaync || swaync 
+exec pgrep swaync || swaync 
 exec xdg-autostart-launcher --user
 exec kitty -1

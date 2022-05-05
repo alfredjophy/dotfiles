@@ -61,13 +61,15 @@
             "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
             "format-linked": "{ifname} (No IP) ",
             "format-disconnected": "Disconnected ⚠",
-            "tooltip":false
+            "tooltip":false,
+            "on-click-right": "nm-connection-editor",
+
         },
         "pulseaudio": {
-            "format": "{volume}% {icon} {format_source}",
-            "format-bluetooth": "{volume}% {icon} {format_source}",
-            "format-bluetooth-muted": " {icon} {format_source}",
-            "format-muted": " {format_source}",
+            "format": "{volume}% {icon} {format_source} ",
+            "format-bluetooth": "{volume}% {icon} {format_source} ",
+            "format-bluetooth-muted": " {icon} {format_source} ",
+            "format-muted": " {format_source} ",
             "format-source": "{volume}% ",
             "format-source-muted": "",
             "format-icons": {
@@ -85,10 +87,11 @@
         "bluetooth": {
             "format": "{icon}",
             "format-icons": {
-                "enabled": "",
-                "disabled": ""
+                "enabled": "|  |",
+                "disabled": "|  |"
             },
-            "tooltip": false
+            "tooltip": false,
+            "on-click-right": "blueberry",
         },
         "tray": {
             "icon-size":21,
