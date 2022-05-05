@@ -1,0 +1,14 @@
+#!/bin/sh
+start_record() {
+    filename="$(date +'%F-%R-%S' | sed 's/:/-/g').mp4"
+    notify-send -t 5000 "Starting recording in 5 seconds"; 
+    sleep 5 && wf-recorder -f $filename && mv $filename ~/Videos/Recordings
+}
+
+stop_record() {
+    kill -s INT "$(pgrep wf-recorder)" && notify-send 'Recording stopped.'
+
+}
+
+(pgrep "wf-recorder" && stop_record) || start_record
+

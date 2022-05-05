@@ -88,6 +88,7 @@ bindsym $sup+Print exec grimshot --notify save active
 bindsym Shift+Print exec grimshot --notify save window
 bindsym $mod+Print exec grimshot --notify save area 	
 bindsym $mod+Shift+c exec farge --notify --expire-time 3000
+bindsym Ctrl+Print exec way-recorder
 
 bindsym $mod+Ctrl+c exec zenity --color-selection
 
