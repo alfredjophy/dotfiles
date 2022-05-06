@@ -292,7 +292,5 @@ exec /usr/lib/polkit-kde-authentication-agent-1
 exec /usr/lib/xdg-desktop-portal --replace
 exec wl-paste -t text --watch clipman store
 exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
-exec udiskie -a 
 exec pgrep swaync || swaync 
 exec xdg-autostart-launcher --user
-exec kitty -1

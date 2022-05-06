@@ -1,10 +1,10 @@
-#/bin/dash
+#!/bin/dash
 
-if [[ -z $1 ]]; then
+if [ -z "$1" ]; then
         printf "\t\tUsage : new [filename]\n"
         exit
-elif [[ $1 == "-b" ]]; then
-        touch $2
+elif [ "$1" = "-b" ]; then
+        touch "$2"
         exit
 fi
 
@@ -21,12 +21,12 @@ _TEMPLATE_LIST=$(find $XDG_TEMPLATES_DIR -iname "*.$_FILE_TYPE" -exec basename {
 
 touch "$1"
 
-if [[ $(echo "$_TEMPLATE_LIST" | wc -l) == 1 ]]; then
-        cp $XDG_TEMPLATES_DIR/$_TEMPLATE_LIST "$1" &> /dev/null
-elif [[ $(echo "$_TEMPLATE_LIST" | wc -l) -gt 1 ]]; then
-        SELECTION=$(printf "$_TEMPLATE_LIST" | fzf --height=1%)
-        if ! [[ -z $SELECTION ]]; then         
-                cp $XDG_TEMPLATES_DIR/$SELECTION "$1" &> /dev/null
+if [ "$(echo "$_TEMPLATE_LIST" | wc -l)" = 1 ]; then
+        cp "$XDG_TEMPLATES_DIR/$_TEMPLATE_LIST" "$1" 2> /dev/null
+elif [ "$(echo "$_TEMPLATE_LIST" | wc -l)" -gt 1 ]; then
+        SELECTION=$(printf '%s' "$_TEMPLATE_LIST" | fzf --height=1%)
+        if [ -n "$SELECTION" ]; then         
+                cp "$XDG_TEMPLATES_DIR/$SELECTION" "$1" 2> /dev/null
         fi
 fi
 

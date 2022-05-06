@@ -1,8 +1,8 @@
 #!/bin/sh
 start_record() {
     filename="$(date +'%F-%R-%S' | sed 's/:/-/g').mp4"
-    notify-send -t 5000 "Starting recording in 5 seconds"; 
-    sleep 4 && paplay /usr/share/sounds/freedesktop/stereo/window-attention.oga && wf-recorder -f $filename && mv $filename ~/Videos/Recordings
+    notify-send -t 4700 "Starting recording in 5 seconds"; 
+    sleep 5 && paplay /usr/share/sounds/freedesktop/stereo/window-attention.oga && wf-recorder -f "$filename" && mv "$filename" ~/Videos/Recordings
 }
 
 stop_record() {
