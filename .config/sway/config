@@ -83,10 +83,10 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 #screenshot
-bindsym Print exec grimshot --notify save output
-bindsym $sup+Print exec grimshot --notify save active 
-bindsym Shift+Print exec grimshot --notify save window
-bindsym $mod+Print exec grimshot --notify save area 	
+bindsym Print exec grimshot --notify save output && paplay /usr/share/sounds/freedesktop/stereo/screen-capture.oga
+bindsym $sup+Print exec grimshot --notify save active && paplay /usr/share/sounds/freedesktop/stereo/screen-capture.oga
+bindsym Shift+Print exec grimshot --notify save window && paplay /usr/share/sounds/freedesktop/stereo/screen-capture.oga
+bindsym $mod+Print exec grimshot --notify save area 	&& paplay /usr/share/sounds/freedesktop/stereo/screen-capture.oga
 bindsym $mod+Shift+c exec farge --notify --expire-time 3000
 bindsym Ctrl+Print exec way-recorder
 
