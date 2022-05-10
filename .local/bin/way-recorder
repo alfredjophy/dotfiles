@@ -1,8 +1,16 @@
 #!/bin/sh
 start_record() {
+
     filename="$(date +'%F-%R-%S' | sed 's/:/-/g').mp4"
+    
+    wf_recorder_flag=''
+    # area
+    if [ "$1" = "--area" ];then
+        wf_recorder_flag="-g $(slurp)"
+    fi
+
     notify-send -t 4700 "Starting recording in 5 seconds"; 
-    sleep 5 && paplay /usr/share/sounds/freedesktop/stereo/window-attention.oga && wf-recorder -f "$filename" && mv "$filename" ~/Videos/Recordings
+    sleep 5 && paplay /usr/share/sounds/freedesktop/stereo/window-attention.oga && wf-recorder -f "$filename" "$wf_recorder_flag" && mv "$filename" ~/Videos/Recordings
 }
 
 stop_record() {
@@ -10,5 +18,5 @@ stop_record() {
 
 }
 
-(pgrep "wf-recorder" && stop_record) || start_record
+(pgrep "wf-recorder" && stop_record) || start_record "$@"
 

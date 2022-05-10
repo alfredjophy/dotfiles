@@ -16,23 +16,18 @@
         },
         {
             "browser": "firefoxpwa",
-            "profile": "01FKNHAE18RJPNH2Y02Q2XAW38",
+            "profile": "01G1K4YGSAD54XRX22Q7NVDY1Y",
             "url_patterns": ["meet.jit.si"]
         },
         {
             "browser": "firefoxpwa",
-            "profile": "01FFAZW39PG9F70N1ASEZ17G5K",
+            "profile": "01G1J491SATY12WJVA9TTS9KZY",
             "url_patterns": ["github.com", "gist.github.com"]
         },
         {
             "browser": "firefoxpwa",
             "profile": "01FFAXQZ8BZMSBM4HJHH97K9X3",
             "url_patterns": ["reddit.com", "www.reddit.com"]
-        },
-        {
-            "browser": "brave",
-            "profile": "Profile 6",
-            "url_patterns": ["gog.com", "store.steampowered.com"]
         },
         {
             "browser": "firefoxpwa",
@@ -46,4 +41,3 @@
         }
     ]
 }
-

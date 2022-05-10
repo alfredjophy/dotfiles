@@ -38,7 +38,7 @@ map <silent><leader>R :NvimTreeRefresh<cr>
 " Formatting options
 map <silent><leader>p :echo "Formatter not specified!"<cr>
 
-autocmd fileType javascripts,html,css,json,markdown  map <silent><leader>p :CocCommand prettier.formatFile<cr>
+autocmd fileType javascript,html,css,json,markdown  map <silent><leader>p :CocCommand prettier.formatFile<cr>
 autocmd fileType c,cpp map <silent><leader>p :%!astyle <cr>
 autocmd fileType rust map <silent><leader>p :%!rustfmt <cr>
 
@@ -103,7 +103,6 @@ require('lualine').setup{options = {theme = 'onedark'}}
 require('bufferline').setup()
 require'nvim-treesitter.configs'.setup {
     ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-    ignore_install = { "javascript" }, -- List of parsers to ignore installing
     highlight = {
         enable = true,              -- false will disable the whole extension
         additional_vim_regex_highlighting = false,
