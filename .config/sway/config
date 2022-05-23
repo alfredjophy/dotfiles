@@ -53,6 +53,7 @@ for_window [app_id="^.*"] inhibit_idle fullscreen
 
 #::::::::::fullscreen apps:::::::::
 for_window [app_id="mpv"] fullscreen
+for_window [class="steam_app_*"] fullscreen
 
 for_window [title="Picture-in-Picture"] sticky enable
 

@@ -1,4 +1,5 @@
-#!/bin/dash
+#!/bin/sh
+
 . "$HOME/.config/user-dirs.dirs"
 
 _PREV=$(pwd)

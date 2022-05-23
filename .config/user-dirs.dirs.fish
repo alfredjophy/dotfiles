@@ -1,11 +1,26 @@
-set XDG_DESKTOP_DIR "$HOME/Desktop"
-set XDG_DOWNLOAD_DIR "$HOME/Downloads"
-set XDG_TEMPLATES_DIR "$HOME/Templates"
-set XDG_PUBLICSHARE_DIR "$HOME/Public"
-set XDG_DOCUMENTS_DIR "$HOME/Documents"
-set XDG_MUSIC_DIR "$HOME/Music"
-set XDG_PICTURES_DIR "$HOME/Pictures"
-set XDG_VIDEOS_DIR "$HOME/Videos"
-set XDG_SCREENSHOTS_DIR "$HOME/Pictures/Screenshots"
-set XDG_REPOSITORIES_DIR "$HOME/Projects"
-set XDG_NOTES_DIR "$HOME/Notes"
+export XDG_DESKTOP_DIR="$HOME/Desktop"
+export XDG_DOWNLOAD_DIR="$HOME/Downloads"
+export XDG_TEMPLATES_DIR="$HOME/Templates"
+export XDG_PUBLICSHARE_DIR="$HOME/Public"
+export XDG_DOCUMENTS_DIR="$HOME/Documents"
+export XDG_MUSIC_DIR="$HOME/Music"
+export XDG_PICTURES_DIR="$HOME/Pictures"
+export XDG_VIDEOS_DIR="$HOME/Videos"
+export XDG_SCREENSHOTS_DIR="$HOME/Pictures/Screenshots"
+export XDG_REPOSITORIES_DIR="$HOME/Projects"
+export XDG_NOTES_DIR="$HOME/Notes"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+export HISTFILE="$XDG_CACHE_HOME"/bash/history
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export ELINKS_CONFDIR="$XDG_CONFIG_HOME"/elinks
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+export ANDROID_HOME=$XDG_DATA_HOME/android
+export MYSQL_HISTFILE="$XDG_DATA_HOME"/mysql_history
+export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history

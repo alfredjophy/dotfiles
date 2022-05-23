@@ -1,3 +1,5 @@
+. $HOME/.config/user-dirs.dirs.fish
+
 set -l xdg_data_home $XDG_DATA_HOME ~/.local/share
 set -gx --path XDG_DATA_DIRS $xdg_data_home[1]/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 
@@ -27,9 +29,9 @@ alias rm='trash'
 alias lf='ranger .'
 alias pkg-browse="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
 alias md="mdcat $1 | bat -p"
-alias chroot-debian-recovery='sudo mount /mnt && sudo mount /mnt/boot/efi && sudo arch-chroot /mnt && sudo umount -R /mnt'
-
-. $HOME/.config/user-dirs.dirs.fish
+alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
+alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
+alias php-server="php -S localhost:8080"
 
 motivate
 
