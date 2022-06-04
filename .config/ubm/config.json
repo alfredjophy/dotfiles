@@ -7,7 +7,15 @@
         {
             "browser": "firefox",
             "profile": "Development",
-            "url_patterns": ["localhost", "0.0.0.0", "127.0.0.0", "127.0.0.1"]
+            "url_patterns": [
+                "localhost",
+                "0.0.0.0",
+                "127.0.0.0",
+                "127.0.0.1",
+                "3000.local.com",
+                "8000.local.com",
+                "8080.local.com"
+            ]
         },
         {
             "browser": "firefoxpwa",

@@ -36,11 +36,12 @@ map <silent><leader>t :lua require("FTerm").toggle()<cr>
 map <silent><leader>R :NvimTreeRefresh<cr>
 
 " Formatting options
-map <silent><leader>p :echo "Formatter not specified!"<cr>
+map <silent><leader>p :echo "Formatter not specified!Doing gg=G"<cr>gg=G<cr>
 
+autocmd fileType java map <silent><leader>p :%!astyle --style=java<cr>
 autocmd fileType javascript,html,css,json,markdown  map <silent><leader>p :CocCommand prettier.formatFile<cr>
-autocmd fileType c,cpp map <silent><leader>p :%!astyle <cr>
-autocmd fileType rust map <silent><leader>p :%!rustfmt <cr>
+autocmd fileType c,cpp map <silent><leader>p :%!astyle<cr>
+autocmd fileType rust map <silent><leader>p :%!rustfmt<cr>
 
 tmap <silent><leader>t <cmd>lua require("FTerm").toggle()<cr>
 
