@@ -7,6 +7,7 @@ xwayland enable
 
 set $term kitty -1
 set $browser firefox
+set $bar env XDG_CURRENT_DESKTOP=Unity waybar
 
 default_border none
 
@@ -119,6 +120,7 @@ bindsym $mod+b exec $browser
 
 #clipman
 bindsym $mod+c exec pgrep wofi || clipman pick -t wofi 
+bindsym $mod+$sup+c exec pgrep wofi || clipman pick -t wofi --primary
 
 #ranger
 bindsym $mod+f exec $term ranger

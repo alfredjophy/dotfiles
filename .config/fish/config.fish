@@ -32,6 +32,7 @@ alias md="mdcat $1 | bat -p"
 alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
 alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
 alias php-server="php -S localhost:8080"
+alias bpytop="btop"
 
 motivate
 
