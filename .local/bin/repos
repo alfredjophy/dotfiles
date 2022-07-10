@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 _PREV=$(pwd)
 
 # improve this to find git repos
@@ -8,12 +8,6 @@ repo=$(echo "$repos"| fzf --height 60% --layout reverse)
 
 repo=$(echo "/home/ajrx/Projects/$repo" | sed -r "s/ //")
 
-
-cd "$repo"
-if [[ -z "$1" ]]; then
-    nvim
-else
-    "$SHELL"
-fi
-
-cd "$_PREV"
+cd "$repo" || exit
+nvim
+cd "$_PREV" || exit

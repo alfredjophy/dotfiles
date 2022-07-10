@@ -83,6 +83,8 @@ Plug 'mhinz/vim-startify'
 
 Plug 'alvan/vim-closetag'
 
+Plug 'editorconfig/editorconfig-vim'
+
 call plug#end()
 
 let g:better_escape_shortcut = ['fj','jf','FJ','JF']

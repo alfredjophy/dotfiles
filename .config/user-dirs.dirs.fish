@@ -29,3 +29,5 @@ export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 export WINEPREFIX="$XDG_DATA_HOME"/wine
 export PSQL_HISTORY="$XDG_DATA_HOME/psql_history"
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"  
+export GOPATH="$XDG_DATA_HOME"/go
+export SQLITE_HISTORY="$XDG_CACHE_HOME"/sqlite_history 
