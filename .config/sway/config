@@ -7,7 +7,6 @@ xwayland enable
 
 set $term kitty -1
 set $browser firefox
-set $bar env XDG_CURRENT_DESKTOP=Unity waybar
 
 default_border none
 
@@ -54,7 +53,7 @@ for_window [app_id="^.*"] inhibit_idle fullscreen
 
 #::::::::::fullscreen apps:::::::::
 for_window [app_id="mpv"] fullscreen
-for_window [class="steam_app_*"] fullscreen
+for_window [class="^(steam_app_*|steam)$"] fullscreen
 
 for_window [title="Picture-in-Picture"] sticky enable
 

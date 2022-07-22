@@ -31,3 +31,4 @@ export PSQL_HISTORY="$XDG_DATA_HOME/psql_history"
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"  
 export GOPATH="$XDG_DATA_HOME"/go
 export SQLITE_HISTORY="$XDG_CACHE_HOME"/sqlite_history 
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
