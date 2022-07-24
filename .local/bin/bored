@@ -12,6 +12,6 @@ done
 
 #echo "$list"
 
-towatch=$(echo "$list" | shuf -n 1 )
+towatch=$(echo "$list" | shuf -n 1 --random-source=/dev/urandom)
 
 nohup xdg-open "$towatch" > /dev/null 2> /dev/null & exit
