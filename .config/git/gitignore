@@ -1,0 +1,9 @@
+nohup.out
+node_module/*
+__pycache__/*
+.env
+.env.prod
+.cache/*
+*.tar.*
+*.zip
+.daemons/*

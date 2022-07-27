@@ -1,0 +1,28 @@
+[user]
+	email = alfredjophy@protonmail.com
+	name = Alfred Jophy
+[init]
+    defaultBranch = main
+[core]
+    pager = delta
+	excludesFile = /home/ajrx/.config/git/gitignore
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    light = false    # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+[pull]
+	rebase = false
+[maintenance]
+	repo = /home/ajrx/Projects/Algata/academy.desertwhales.com
+	repo = /home/ajrx/Projects/BigOne/myielts-partner-web
+	repo = /home/ajrx/Projects/BigOne/my-ielts-partner-app
+	repo = /home/ajrx/Projects/Algata/itdreamstore-backend
