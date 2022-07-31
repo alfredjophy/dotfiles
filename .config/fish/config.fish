@@ -24,7 +24,7 @@ alias icat='kitty +kitten icat'
 alias zathura='zathura --fork'
 alias brave='/usr/bin/brave --profile-directory=Default'
 alias of='onefetch'
-alias git_root='git rev-parse --show-toplevel'
+alias git-root='git rev-parse --show-toplevel'
 alias rm='trash'
 alias lf='ranger .'
 alias pkg-browse="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"

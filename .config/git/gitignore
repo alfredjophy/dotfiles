@@ -4,6 +4,11 @@ __pycache__/*
 .env
 .env.prod
 .cache/*
-*.tar.*
+*.tar.gz
+*.tar.zst
+*.tar
 *.zip
 .daemons/*
+vendor/*
+dist/*
+build/*
