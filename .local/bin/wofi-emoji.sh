@@ -40,17 +40,8 @@ URLS=(
 'https://emojipedia.org/flags/'
 )
 
-
-function notify() {
-  if [ "$(command -v notify-send)" ]; then
-    notify-send "$1" "$2"
-  fi
-}
-
-
 function download() {
-  notify "$(basename "$0")" 'Downloading all emoji for your pleasure'
-
+  echo "Downloading images to $EMOJI_FILE"
   echo "" > "$EMOJI_FILE"
 
   for url in "${URLS[@]}"; do
@@ -71,14 +62,15 @@ function download() {
     echo "$emojis" >> "$EMOJI_FILE"
   done
 
-  notify "$(basename "$0")" "We're all set!"
+  echo "Done"
+
 }
 
 function wofi_menu() { # {{{
-  wofi -width 25 -lines 7 -dmenu -i -p 'emoji: ' \
-    -kb-row-tab '' \
-    -kb-row-select Tab \
-    -kb-custom-1 Ctrl+c
+  wofi --width 23% --lines 12 --dmenu -i -p 'Search for an emoji: ' \
+    --kb-row-tab '' \
+    --kb-row-select Tab \
+    --kb-custom-1 Ctrl+c
 }
 # }}}
 
@@ -118,20 +110,12 @@ function display() {
   fi
 }
 
-
 # Some simple argparsing
 if [[ "$1" =~ -D|--download ]]; then
   download
   exit 0
-elif [[ "$1" =~ -h|--help ]]; then
-  echo "usage: $0 [-D|--download]"
-  exit 0
 fi
 
-# Download all emoji if they don't exist yet
-if [ ! -f "$EMOJI_FILE" ]; then
-  download
-fi
 
 # display displays :)
 display
