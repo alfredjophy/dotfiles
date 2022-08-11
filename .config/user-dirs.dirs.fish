@@ -32,3 +32,4 @@ export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
 export GOPATH="$XDG_DATA_HOME"/go
 export SQLITE_HISTORY="$XDG_CACHE_HOME"/sqlite_history 
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export KODI_DATA="$XDG_DATA_HOME"/kodi

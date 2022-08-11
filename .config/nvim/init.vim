@@ -53,6 +53,7 @@ map <silent><leader>f <cmd>CHADopen<cr>
 map <silent><c-l> :noh<cr>
 map <silent><leader>t :lua require("FTerm").toggle()<cr>
 map <silent><leader>R :NvimTreeRefresh<cr>
+map <silent><leader>G :terminal lazygit<cr>
 
 " Formatting options
 map <silent><leader>p :echo "Formatter not specified!Doing gg=G"<cr>gg=G<cr>
