@@ -6,7 +6,7 @@ _PREV=$(pwd)
 cd "$XDG_NOTES_DIR" || exit
 
 if [ -z "$1" ] ; then
-    find "$XDG_NOTES_DIR/" -type f |fzf --height 20% --layout reverse --preview 'clear && mdcat {}'  --bind 'enter:execute(clear && nvim {})'
+    find "$XDG_NOTES_DIR/" -type f |fzf --layout reverse --preview 'clear && mdcat {}'  --bind 'enter:execute(clear && nvim {})'
     cd "$_PREV" || exit
     exit
 fi
