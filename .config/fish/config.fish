@@ -37,5 +37,3 @@ alias bpytop="btop"
 motivate
 
 starship init fish | source
-direnv hook fish | source
-
