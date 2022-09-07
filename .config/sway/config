@@ -58,11 +58,6 @@ for_window [class="^(steam_app_*|steam)$"] fullscreen
 
 for_window [title="Picture-in-Picture"] sticky enable
 
-
-# Wallpaper
-exec_always pgrep oguri || oguri
-exec_always pgrep swayblur || swayblur -b 10 -a 2
-
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec swayidle -w timeout 300 'swaylock -C$HOME/.config/swaylock/config.idle' timeout 420 'systemctl suspend' resume 'swaymsg "output * dpms on"' before-sleep 'swaylock'
 exec swayidle lock 'swaymsg "output * dpms on"&& swaylock' unlock 'kill -s 1 $(pgrep swaylock)'
@@ -255,7 +250,6 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
-include /etc/sway/config.d/*
 
 input 1739:52756:SYNA32A0:00_06CB:CE14_Touchpad { 
     tap enabled
@@ -285,19 +279,22 @@ bar {
     mode dock
     modifier Mod4
     swaybar_command waybar
-}
+} 
 
 # FreeSync
 output 'Chimei Innolux Corporation 0x139D 0x00000000' adaptive_sync on
+output 'Chimei Innolux Corporation 0x139D 0x00000000' subpixel rgb
+output 'Chimei Innolux Corporation 0x139D 0x00000000' background ~/.local/share/wallpapers/purple.png fill
+output 'Dell Inc. DELL S2421HN JLT42H3' adaptive_sync on
+output 'Dell Inc. DELL S2421HN JLT42H3' subpixel rgb
+output 'Dell Inc. DELL S2421HN JLT42H3' background ~/.local/share/wallpapers/landscape.jpg fill
 
 # Auto-run
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec systemctl --user start sway-session.target
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 
 exec /usr/lib/xdg-desktop-portal --replace
 exec wl-paste -t text --watch clipman store
 exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
-exec pgrep swaync || swaync 
 exec xdg-autostart-launcher --user

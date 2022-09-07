@@ -1,5 +1,7 @@
-[output *]
+[output eDP-1]
 image=/home/ajrx/.local/share/wallpapers/purple.png
-filter=nearest
-scaling-mode=fill
-anchor=center
+filter=best
+
+[output DP-1]
+image=/home/ajrx/.local/share/wallpapers/landscape.jpg
+filter=best
