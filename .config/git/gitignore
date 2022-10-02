@@ -13,3 +13,4 @@ vendor/*
 dist/*
 build/*
 ';'
+*.diff

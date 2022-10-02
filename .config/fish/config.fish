@@ -27,12 +27,13 @@ alias of='onefetch'
 alias git-root='git rev-parse --show-toplevel'
 alias rm='trash'
 alias lf='ranger .'
-alias pkg-browse="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
+alias pkg-browse="env SHELL=dash pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
 alias md="mdcat $1 | bat -p"
 alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
 alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
 alias php-server="php -S localhost:8080"
 alias bpytop="btop"
+alias nn="glow $XDG_NOTES_DIR"
 
 motivate
 
