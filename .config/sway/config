@@ -284,7 +284,7 @@ bar {
 # FreeSync
 output 'Chimei Innolux Corporation 0x139D 0x00000000' adaptive_sync on
 output 'Chimei Innolux Corporation 0x139D 0x00000000' subpixel rgb
-output 'Chimei Innolux Corporation 0x139D 0x00000000' background ~/.local/share/wallpapers/purple.png fill
+output 'Chimei Innolux Corporation 0x139D 0x00000000' background ~/.local/share/wallpapers/purple-v2.jpg fill
 output 'Dell Inc. DELL S2421HN JLT42H3' adaptive_sync on
 output 'Dell Inc. DELL S2421HN JLT42H3' subpixel rgb
 output 'Dell Inc. DELL S2421HN JLT42H3' background ~/.local/share/wallpapers/landscape.jpg fill

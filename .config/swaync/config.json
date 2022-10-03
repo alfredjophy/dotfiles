@@ -9,5 +9,5 @@
     "image-visibility": "when-available",
     "transition-time": 200,
     "hide-on-clear": true,
-    "widgets": ["title", "dnd", "notification", "mpris"]
+    "widgets": ["dnd", "notification", "mpris"]
 }
