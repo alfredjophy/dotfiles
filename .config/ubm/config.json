@@ -56,6 +56,11 @@
             "browser": "firefox",
             "profile": "College Stuff",
             "url_patterns": ["docs.google.com", "forms.gle", "drive.google.com"]
+        },
+        {
+            "browser": "firefoxpwa",
+            "profile": "01G1MPT8HYED7CKCPKZWWGBPB4",
+            "url_patterns": ["spotify.com", "open.spotify.com"]
         }
     ]
 }

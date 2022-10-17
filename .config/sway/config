@@ -65,19 +65,19 @@ exec swayidle lock 'swaymsg "output * dpms on"&& swaylock' unlock 'kill -s 1 $(p
 # KEY BINDINGS
 
 # Use pactl to adjust volume in PulseAudio.
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% 
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% 
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle 
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle 
+bindsym --locked XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% 
+bindsym --locked XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% 
+bindsym --locked XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle 
+bindsym --locked XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle 
 
 #brightness controls
-bindsym XF86MonBrightnessDown exec brightnessctl set 1%- 
-bindsym XF86MonBrightnessUp exec brightnessctl set +1% 
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 1%- 
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set +1% 
 
 #media keys
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym --locked XF86AudioPlay  exec playerctl play-pause
+bindsym --locked XF86AudioNext exec playerctl next
+bindsym --locked XF86AudioPrev  exec playerctl previous
 
 #screenshot
 bindsym Print exec grimshot --notify save output && paplay /usr/share/sounds/freedesktop/stereo/screen-capture.oga
@@ -85,11 +85,11 @@ bindsym $sup+Print exec grimshot --notify save active && paplay /usr/share/sound
 bindsym Shift+Print exec grimshot --notify save window && paplay /usr/share/sounds/freedesktop/stereo/screen-capture.oga
 bindsym $mod+Print exec grimshot --notify save area	&& paplay /usr/share/sounds/freedesktop/stereo/screen-capture.oga
 bindsym $mod+Shift+c exec farge --notify --expire-time 3000
-bindsym Ctrl+Print exec way-recorder    
-bindsym $mod+Ctrl+Print exec way-recorder --area
+#bindsym Ctrl+Print exec way-recorder    
+#bindsym $mod+Ctrl+Print exec way-recorder --area
 
 #emoji
-bindsym $mod+u exec wofi-emoji.sh
+#bindsym $mod+u exec wofi-emoji.sh
 
 bindsym $mod+Ctrl+c exec zenity --color-selection
 
@@ -110,9 +110,6 @@ bindsym $mod+p sticky toggle
 
 # wofi
 bindsym $mod+d exec pgrep wofi || wofi -Ii --lines=10 --show drun
-
-#window switcher
-bindsym $mod+Tab exec "pgrep wofi || sway-windowswitcher"
 
 bindsym $mod+b exec $browser
 
@@ -258,6 +255,14 @@ input 1739:52756:SYNA32A0:00_06CB:CE14_Touchpad {
     dwt enabled
 }
 
+input 1267:10996:ELAN2514:00_04F3:2AF4 {
+    map_to_output eDP-1
+}
+
+input 1267:10996:ELAN2514:00_04F3:2AF4_Stylus {
+    map_to_output eDP-1
+}
+
 input 9639:64103:CX_2.4G_Receiver_Mouse {
     natural_scroll enabled
 }
@@ -270,7 +275,6 @@ input 1356:3302:Wireless_Controller_Touchpad {
     tap enabled
     natural_scroll enabled
     accel_profile "adaptive"
-
 }
 
 bar {
@@ -281,20 +285,24 @@ bar {
     swaybar_command waybar
 } 
 
-# FreeSync
 output 'Chimei Innolux Corporation 0x139D 0x00000000' adaptive_sync on
 output 'Chimei Innolux Corporation 0x139D 0x00000000' subpixel rgb
 output 'Chimei Innolux Corporation 0x139D 0x00000000' background ~/.local/share/wallpapers/purple-v2.jpg fill
+
 output 'Dell Inc. DELL S2421HN JLT42H3' adaptive_sync on
 output 'Dell Inc. DELL S2421HN JLT42H3' subpixel rgb
 output 'Dell Inc. DELL S2421HN JLT42H3' background ~/.local/share/wallpapers/landscape.jpg fill
 
+set $laptop eDP-1
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
+
 # Auto-run
-exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec_always systemctl --user start sway-session.target
+exec_always systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
-exec systemctl --user start sway-session.target
 exec /usr/lib/xdg-desktop-portal --replace
 exec wl-paste -t text --watch clipman store
-exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
+exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json" --no-persist
 exec xdg-autostart-launcher --user

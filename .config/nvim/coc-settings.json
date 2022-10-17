@@ -4,7 +4,10 @@
         "html",
         "javascript",
         "javascriptreact",
-        "json"
+        "json",
+        "php",
+        "c",
+        "cpp"
     ],
     "prettier.tabWidth": 4,
     "languageserver": {

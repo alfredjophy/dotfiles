@@ -33,3 +33,6 @@ export GOPATH="$XDG_DATA_HOME"/go
 export SQLITE_HISTORY="$XDG_CACHE_HOME"/sqlite_history 
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export KODI_DATA="$XDG_DATA_HOME"/kodi
+export MYCLI_HISTFILE="$XDG_DATA_HOME/mycli/history"
+export XCURSOR_PATH=/usr/share/icons:{$XDG_DATA_HOME}/icons
+export _JAVA_AWT_WM_NONREPARENTING=1

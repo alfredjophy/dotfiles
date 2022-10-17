@@ -13,9 +13,10 @@
     "coc-rust-analyzer": ">=0.68.1",
     "coc-sh": ">=0.7.0",
     "coc-sql": ">=0.10.4",
-    "coc-tsserver": ">=1.11.9"
+    "coc-tsserver": ">=1.11.9",
+    "coc-snippets": ">=3.1.2"
   },
   "disabled": [],
   "locked": [],
-  "lastUpdate": 1664799954835
+  "lastUpdate": 1665971248290
 }

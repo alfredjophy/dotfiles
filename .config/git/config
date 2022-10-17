@@ -27,3 +27,8 @@
 	repo = /home/ajrx/Projects/BigOne/my-ielts-partner-app
 	repo = /home/ajrx/Projects/Algata/itdreamstore-backend
 	repo = /home/ajrx/Projects/Algata/itdreamstore
+[alias]
+    last = log -1 HEAD --stat
+    cb   = checkout -b 
+    logl = log --oneline
+    cm = commit -m

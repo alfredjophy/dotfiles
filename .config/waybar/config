@@ -1,100 +1,135 @@
-{   "ipc": true,
-    "layer": "bottom", 
-        "height": 30, 
-        "modules-left":["battery","cpu","memory","temperature","backlight","tray","sway/mode"],
-        "modules-center":["clock"],
-        "modules-right": ["sway/workspaces","idle_inhibitor", "pulseaudio","bluetooth","network"], 
-        "sway/workspaces": {
-            "disable-scroll-wraparound" : true,
-            "disable-auto-back-and-forth" : true,
-            "smooth-scrolling-threshold" : 3
+{
+    "ipc": true,
+    "layer": "bottom",
+    "height": 30,
+    "modules-left": [
+        "battery",
+        "cpu",
+        "memory",
+        "temperature",
+        "backlight",
+        "tray",
+        "sway/mode"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "sway/workspaces",
+        "idle_inhibitor",
+        "pulseaudio",
+        "bluetooth",
+        "network"
+    ],
+    "sway/workspaces": {
+        "disable-scroll-wraparound": true,
+        "disable-auto-back-and-forth": true,
+        "smooth-scrolling-threshold": 3
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "deactivated": "﯈",
+            "activated": ""
         },
-        "sway/mode": {
-            "format": "<span style=\"italic\">{}</span>"
+        "tooltip": false
+    },
+    "clock": {
+        "format": "{:%H:%M | %a %Y %m %d }",
+        "tooltip": false
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% ",
+        "tooltip": false
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ],
+        "tooltip": false
+    },
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": [
+            "",
+            " ",
+            ""
+        ],
+        "tooltip": false
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
         },
-        "idle_inhibitor": {
-            "format": "{icon}",
-            "format-icons": {
-                "deactivated": "﯈",
-                "activated": ""
-            },
-            "tooltip":false
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}%  ",
+        "format-full": "",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "format-time": "{H}:{M}",
+        "tooltip": "{time}"
+    },
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "tooltip": false,
+        "on-click-right": "nm-connection-editor"
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon} {format_source} ",
+        "format-bluetooth": "{volume}% {icon} {format_source} ",
+        "format-bluetooth-muted": " {icon} {format_source} ",
+        "format-muted": " {format_source} ",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
         },
-        "clock": {
-            "format": "{:%H:%M | %a %Y %m %d }",
-            "tooltip":false,
-        },
-        "cpu": {
-            "format": "{usage}% ",
-            "tooltip": false
-        },
-        "memory": {
-            "format": "{}% ",
-            "tooltip":false
-        },
-        "temperature": {
-            "critical-threshold": 80,
-            "format": "{temperatureC}°C {icon}",
-            "format-icons": ["", "", ""],
-            "tooltip":false
-        },
-        "backlight": {
-            "format": "{percent}% {icon}",
-            "format-icons": [""," ",""],
-            "tooltip":false
-        },
-        "battery": {
-            "states": {
-                // "good": 95,
-                "warning": 30,
-                "critical": 15
-            },
-            "format": "{capacity}% {icon}",
-            "format-charging": "{capacity}%  ",
-            "format-full": "",
-            "format-icons": ["", "", "", "", "",""],
-            "format-time":"{H}:{M}",
-            "tooltip":"{time}"
-        },
-        "network": {
-            "format-wifi": "{essid} ({signalStrength}%) ",
-            "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-            "format-linked": "{ifname} (No IP) ",
-            "format-disconnected": "Disconnected ⚠",
-            "tooltip":false,
-            "on-click-right": "nm-connection-editor",
-
-        },
-        "pulseaudio": {
-            "format": "{volume}% {icon} {format_source} ",
-            "format-bluetooth": "{volume}% {icon} {format_source} ",
-            "format-bluetooth-muted": " {icon} {format_source} ",
-            "format-muted": " {format_source} ",
-            "format-source": "{volume}% ",
-            "format-source-muted": "",
-            "format-icons": {
-                "headphone": "",
-                "hands-free": "",
-                "headset": "",
-                "phone": "",
-                "portable": "",
-                "car": "",
-                "default": ["", "", ""]
-            },
-            "on-click-right": "env QT_QPA_PLATFORMTHEME=qt5ct pavucontrol-qt",
-            "tooltip":false
-        },
-        "bluetooth": {
-            "format": "{icon}",
-            "format-icons": {
-                "enabled": "|  |",
-                "disabled": "|  |"
-            },
-            "tooltip": false,
-            "on-click-right": "blueberry",
-        },
-        "tray": {
-            "icon-size":21,
-            "spacing": 10
-        }
+        "on-click-right": "env QT_QPA_PLATFORMTHEME=qt5ct pavucontrol-qt",
+        "tooltip": false
+    },
+    "bluetooth": {
+        "controller" : "D8:C0:A6:31:D1:6E",
+        "format-on": "",
+        "format-enabled": "",
+        "format-connected": "",
+        "format-off": "",
+        "format-disabled": "",
+        "tooltip": false,
+        "on-click-right": "blueberry"
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    }
 }

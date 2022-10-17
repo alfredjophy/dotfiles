@@ -12,5 +12,6 @@ __pycache__/*
 vendor/*
 dist/*
 build/*
-';'
+;
 *.diff
+*.patch
