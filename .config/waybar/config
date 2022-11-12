@@ -116,7 +116,8 @@
             ]
         },
         "on-click-right": "env QT_QPA_PLATFORMTHEME=qt5ct pavucontrol-qt",
-        "tooltip": false
+        "tooltip": false,
+        "ignored-sinks":["EasyEffects Sink"]
     },
     "bluetooth": {
         "controller" : "D8:C0:A6:31:D1:6E",

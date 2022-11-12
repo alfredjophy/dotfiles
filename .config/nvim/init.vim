@@ -32,9 +32,12 @@ imap <A> <Esc>
 
 map <silent><leader>f <cmd>CHADopen<cr>
 map <silent><c-l> :noh<cr>
-map <silent><leader>t :lua require("FTerm").toggle()<cr>
+map <silent><leader>t :ToggleTerm<cr>
 map <silent><leader>R :NvimTreeRefresh<cr>
 map <silent><leader>G :terminal lazygit<cr>
+
+
+tmap <silent><leader>t <cmd>ToggleTerm<cr>
 
 " Formatting options
 map <silent><leader>p :CocCommand editor.action.formatDocument<cr>
@@ -46,7 +49,6 @@ map <silent><leader>p :CocCommand editor.action.formatDocument<cr>
 "autocmd fileType rust map <silent><leader>p :%!rustfmt<cr>
 autocmd FileType php set iskeyword+=$
 
-tmap <silent><leader>t <cmd>lua require("FTerm").toggle()<cr>
 
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
@@ -64,9 +66,7 @@ Plug 'norcalli/nvim-colorizer.lua'
 
 Plug 'jiangmiao/auto-pairs'
 
-Plug 'joshdick/onedark.vim'
-
-Plug 'numtostr/FTerm.nvim'
+Plug 'olimorris/onedarkpro.nvim' 
 
 Plug 'akinsho/nvim-bufferline.lua'
 
@@ -86,6 +86,8 @@ Plug 'mhinz/vim-startify'
 
 Plug 'alvan/vim-closetag'
 
+Plug 'akinsho/toggleterm.nvim'
+
 Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
@@ -101,7 +103,7 @@ let g:closetag_regions = {'typescript.tsx': 'jsxRegion,tsxRegion','javascript.js
 let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
 
-colorscheme onedark
+colorscheme onedarkpro
 highlight Comment cterm=italic gui=italic
 
 lua << END
@@ -145,6 +147,7 @@ post_hook = nil,              -- Function to run after the scrolling animation e
 }
 )
 require'colorizer'.setup({'*'},{RRGGBBAA=true,rgb_fn=true,hsl_fn=true,css=true,css_fn=true})
+require("toggleterm").setup()
 END
 
 " COC.nvim

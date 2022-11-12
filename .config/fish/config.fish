@@ -34,6 +34,7 @@ alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
 alias php-server="php -S localhost:8080"
 alias bpytop="btop"
 alias nn="glow $XDG_NOTES_DIR"
+alias ssh-clear='rm -rf ~/.ssh/sockets/*'
 
 motivate
 

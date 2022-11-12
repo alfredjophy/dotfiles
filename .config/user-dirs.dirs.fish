@@ -36,3 +36,7 @@ export KODI_DATA="$XDG_DATA_HOME"/kodi
 export MYCLI_HISTFILE="$XDG_DATA_HOME/mycli/history"
 export XCURSOR_PATH=/usr/share/icons:{$XDG_DATA_HOME}/icons
 export _JAVA_AWT_WM_NONREPARENTING=1
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+export KODI_DATA="$XDG_DATA_HOME"/kodi
+export PYTHONSTARTUP="/etc/python/pythonrc"
+export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"  

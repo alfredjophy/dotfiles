@@ -3,6 +3,7 @@ node_module/*
 __pycache__/*
 .env
 .env.prod
+.env.*
 .cache/*
 *.tar.gz
 *.tar.zst
