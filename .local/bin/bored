@@ -2,7 +2,7 @@
 
 prefix=~/Videos/Shows
 
-shows=("FRIENDS" "How I Met Your Mother" "The Office US")
+shows=("FRIENDS" "How I Met Your Mother")
 
 set list
 

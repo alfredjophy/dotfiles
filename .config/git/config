@@ -29,6 +29,6 @@
 	repo = /home/ajrx/Projects/Algata/itdreamstore
 [alias]
     last = log -1 HEAD --stat
-    cb   = checkout -b 
+    cb   = switch -c 
     logl = log --oneline
     cm = commit -m

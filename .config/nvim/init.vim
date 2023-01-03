@@ -9,7 +9,7 @@ set softtabstop=4
 set shiftwidth=4
 set tabstop=4
 set expandtab
-set shell=dash
+set shell=fish
 set completeopt=menu,preview
 set termguicolors
 set conceallevel=2
@@ -90,6 +90,12 @@ Plug 'akinsho/toggleterm.nvim'
 
 Plug 'editorconfig/editorconfig-vim'
 
+Plug 'liuchengxu/graphviz.vim'
+
+"Plug 'mfussenegger/nvim-dap'
+
+"Plug 'rcarriga/nvim-dap-ui'
+
 call plug#end()
 
 let g:better_escape_shortcut = ['fj','jf','FJ','JF']
@@ -103,7 +109,7 @@ let g:closetag_regions = {'typescript.tsx': 'jsxRegion,tsxRegion','javascript.js
 let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
 
-colorscheme onedarkpro
+colorscheme onedark
 highlight Comment cterm=italic gui=italic
 
 lua << END

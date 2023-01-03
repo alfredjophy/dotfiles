@@ -69,6 +69,7 @@
         "tooltip": false
     },
     "battery": {
+        "bat":"BAT1",
         "states": {
             "warning": 30,
             "critical": 15
@@ -93,7 +94,7 @@
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "tooltip": false,
-        "on-click-right": "nm-connection-editor"
+        "on-click-right": "iwgtk"
     },
     "pulseaudio": {
         "format": "{volume}% {icon} {format_source} ",

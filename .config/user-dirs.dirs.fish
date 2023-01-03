@@ -24,7 +24,6 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export ANDROID_HOME=$XDG_DATA_HOME/android
 export MYSQL_HISTFILE="$XDG_DATA_HOME"/mysql_history
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
-export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 export WINEPREFIX="$XDG_DATA_HOME"/wine
 export PSQL_HISTORY="$XDG_DATA_HOME/psql_history"
@@ -36,7 +35,10 @@ export KODI_DATA="$XDG_DATA_HOME"/kodi
 export MYCLI_HISTFILE="$XDG_DATA_HOME/mycli/history"
 export XCURSOR_PATH=/usr/share/icons:{$XDG_DATA_HOME}/icons
 export _JAVA_AWT_WM_NONREPARENTING=1
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 export KODI_DATA="$XDG_DATA_HOME"/kodi
 export PYTHONSTARTUP="/etc/python/pythonrc"
 export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"  
+export ANDROID_SDK_ROOT="$XDG_DATA_HOME"/android
+export ANDROID_HOME="$XDG_DATA_HOME"/android

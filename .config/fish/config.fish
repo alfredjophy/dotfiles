@@ -8,7 +8,7 @@ for flatpakdir in ~/.local/share/flatpak/exports/bin /var/lib/flatpak/exports/bi
         contains $flatpakdir $PATH; or set -a PATH $flatpakdir
     end
 end
-export PATH=/bin/lscript:/bin/lscript:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/ajrx/.local/bin
+export PATH=/bin/lscript:/bin/lscript:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/ajrx/.local/bin:$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/platform-tools
 
 #custom aliases
 alias 2048='2048 bluered'
@@ -33,9 +33,6 @@ alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
 alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
 alias php-server="php -S localhost:8080"
 alias bpytop="btop"
-alias nn="glow $XDG_NOTES_DIR"
 alias ssh-clear='rm -rf ~/.ssh/sockets/*'
-
-motivate
 
 starship init fish | source

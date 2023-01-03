@@ -48,11 +48,6 @@
             "url_patterns": ["meet.google.com"]
         },
         {
-            "browser": "firefoxpwa",
-            "profile": "01G84AS4QGR2FPBYYTQQHWEC34",
-            "url_patterns": ["figma.com", "www.figma.com"]
-        },
-        {
             "browser": "firefox",
             "profile": "College Stuff",
             "url_patterns": ["docs.google.com", "forms.gle", "drive.google.com"]
