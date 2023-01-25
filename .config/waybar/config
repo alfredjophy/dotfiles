@@ -7,7 +7,6 @@
         "cpu",
         "memory",
         "temperature",
-        "backlight",
         "tray",
         "sway/mode"
     ],

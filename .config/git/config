@@ -1,6 +1,3 @@
-[user]
-	email = alfredjophy@protonmail.com
-	name = Alfred Jophy
 [init]
     defaultBranch = main
 [core]
@@ -32,3 +29,4 @@
     cb   = switch -c 
     logl = log --oneline
     cm = commit -m
+    undo = reset HEAD~1
