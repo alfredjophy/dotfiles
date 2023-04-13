@@ -55,3 +55,4 @@ export RANGER_LOAD_DEFAULT_RC=FALSE
 export CLICKHOUSE_HISTORY_FILE="$XDG_DATA_HOME"/clickhouse-client-history
 export KERAS_HOME="$XDG_STATE_HOME"/keras
 #export WLR_RENDERER=vulkan
+export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter 

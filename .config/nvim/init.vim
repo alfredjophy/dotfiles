@@ -27,15 +27,16 @@ noremap ; :
 noremap G Gzz
 noremap dd "_dd
 
-nnoremap <A> i
-imap <A> <Esc>
-
 map <silent><leader>f <cmd>CHADopen<cr>
 map <silent><c-l> :noh<cr>
 map <silent><leader>t :ToggleTerm<cr>
 map <silent><leader>R :NvimTreeRefresh<cr>
 map <silent><leader>G :terminal lazygit<cr>
 
+map <silent><c-w> :bnext<cr>
+map <silent><c-q> :bprevious<cr>
+imap <silent><c-w> <esc>:bnext<cr>
+imap <silent><c-q> <esc>:bprevious<cr>
 
 tmap <silent><leader>t <cmd>ToggleTerm<cr>
 
@@ -43,10 +44,10 @@ tmap <silent><leader>t <cmd>ToggleTerm<cr>
 map <silent><leader>p :CocCommand editor.action.formatDocument<cr>
 
 
-"autocmd fileType java map <silent><leader>p :%!astyle --style=java<cr>
-"autocmd fileType javascript,html,css,json,markdown,jsx  map <silent><leader>p :CocCommand prettier.formatFile<cr>
-"autocmd fileType c,cpp,php map <silent><leader>p :%!astyle<cr>
-"autocmd fileType rust map <silent><leader>p :%!rustfmt<cr>
+autocmd fileType java map <silent><leader>p :%!astyle --style=java<cr>
+autocmd fileType javascript,html,css,json,markdown,jsx  map <silent><leader>p :CocCommand prettier.formatFile<cr>
+autocmd fileType c,cpp,php map <silent><leader>p :%!astyle<cr>
+autocmd fileType rust map <silent><leader>p :%!rustfmt<cr>
 autocmd FileType php set iskeyword+=$
 
 

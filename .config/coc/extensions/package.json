@@ -8,15 +8,18 @@
     "coc-json": ">=1.6.1",
     "coc-phpls": ">=2.2.2",
     "coc-prettier": ">=9.3.1",
-    "coc-pyright": ">=1.1.271",
+    "coc-pyright": ">=1.1.301",
     "coc-react-refactor": ">=0.5.0",
     "coc-rust-analyzer": ">=0.68.1",
     "coc-sh": ">=0.7.0",
     "coc-sql": ">=0.10.4",
     "coc-tsserver": ">=1.11.9",
-    "coc-snippets": ">=3.1.2"
+    "coc-snippets": ">=3.1.2",
+    "coc-svelte": ">=0.4.2",
+    "coc-tailwindcss": ">=0.7.0",
+    "coc-fish": ">=1.0.11"
   },
   "disabled": [],
   "locked": [],
-  "lastUpdate": 1675096497644
+  "lastUpdate": 1681353427914
 }

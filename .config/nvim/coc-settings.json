@@ -23,5 +23,6 @@
             ],
             "filetypes": ["haskell", "lhaskell"]
         }
-    }
+    },
+    "svelte.enable-ts-plugin": true
 }
