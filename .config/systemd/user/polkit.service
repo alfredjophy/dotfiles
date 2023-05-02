@@ -1,10 +1,10 @@
 [Unit]
-Description=Legacy polkit authentication agent for GNOME
+Description=Legacy polkit authentication agent for KDE
 PartOf=sway-session.target
 
 [Service]
 Type=simple
-ExecStart=/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+ExecStart=/usr/lib/polkit-kde-authentication-agent-1 
 ExecStop=/bin/kill -2 $MAINPID
 Restart=on-failure
 RestartSec=1

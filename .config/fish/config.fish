@@ -34,5 +34,6 @@ alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
 alias php-server="php -S localhost:8080"
 alias bpytop="btop"
 alias ssh-clear='rm -rf ~/.ssh/sockets/*'
+alias wget="wget --hsts-file='$XDG_DATA_HOME/wget-hsts'"
 
 starship init fish | source

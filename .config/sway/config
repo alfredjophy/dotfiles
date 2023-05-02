@@ -85,7 +85,7 @@ bindsym $sup+Print exec grimshot --notify save active && paplay /usr/share/sound
 bindsym Shift+Print exec grimshot --notify save window && paplay /usr/share/sounds/freedesktop/stereo/screen-capture.oga
 bindsym $mod+Print exec grimshot --notify save area	&& paplay /usr/share/sounds/freedesktop/stereo/screen-capture.oga
 bindsym $mod+Ctrl+Print exec 'grim -g "$(slurp)" - | swappy -f -'
-bindsym $mod+Shift+c exec hyprpicker
+bindsym $mod+Shift+c exec hyprpicker -f hex -a
 #bindsym Ctrl+Print exec way-recorder    
 #bindsym $mod+Ctrl+Print exec way-recorder --area
 

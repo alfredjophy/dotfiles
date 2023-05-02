@@ -35,8 +35,6 @@ map <silent><leader>G :terminal lazygit<cr>
 
 map <silent><c-w> :bnext<cr>
 map <silent><c-q> :bprevious<cr>
-imap <silent><c-w> <esc>:bnext<cr>
-imap <silent><c-q> <esc>:bprevious<cr>
 
 tmap <silent><leader>t <cmd>ToggleTerm<cr>
 
