@@ -24,5 +24,6 @@
             "filetypes": ["haskell", "lhaskell"]
         }
     },
-    "svelte.enable-ts-plugin": true
+    "svelte.enable-ts-plugin": true,
+    "snippets.ultisnips.pythonPrompt": false
 }

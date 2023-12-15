@@ -31,8 +31,8 @@
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "deactivated": "﯈",
-            "activated": ""
+            "deactivated": "󰛊",
+            "activated": "󰅶"
         },
         "tooltip": false
     },
@@ -52,18 +52,19 @@
         "critical-threshold": 80,
         "format": "{temperatureC}°C {icon}",
         "format-icons": [
-            "",
+            "",
+            "",
             "",
-            ""
+            ""
         ],
         "tooltip": false
     },
     "backlight": {
         "format": "{percent}% {icon}",
         "format-icons": [
-            "",
-            " ",
-            ""
+            "󰃞",
+            "󰃟",
+            "󰃠"
         ],
         "tooltip": false
     },
@@ -74,23 +75,25 @@
             "critical": 15
         },
         "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}%  ",
-        "format-full": "",
+        "format-charging": "{capacity}% 󰂄",
+        "format-full": "󰁹",
         "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂"
         ],
         "format-time": "{H}:{M}",
         "tooltip": "{time}"
     },
     "network": {
         "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        "format-linked": "{ifname} (No IP) ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} 󰈀",
+        "format-linked": "{ifname} (No IP) 󰈀",
         "format-disconnected": "Disconnected ⚠",
         "tooltip": false,
         "on-click-right": "iwgtk"
@@ -104,8 +107,8 @@
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "󰋎",
+            "headset": "󰋎",
             "phone": "",
             "portable": "",
             "car": "",
@@ -121,11 +124,11 @@
     },
     "bluetooth": {
         "controller" : "D8:C0:A6:31:D1:6E",
-        "format-on": "",
-        "format-enabled": "",
-        "format-connected": "",
-        "format-off": "",
-        "format-disabled": "",
+        "format-on": "󰂯",
+        "format-enabled": "󰂯",
+        "format-connected": "",
+        "format-off": "󰂲",
+        "format-disabled": "󰂲",
         "tooltip": false,
         "on-click-right": "blueberry"
     },

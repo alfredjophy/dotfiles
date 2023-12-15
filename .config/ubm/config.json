@@ -19,6 +19,11 @@
         },
         {
             "browser": "firefoxpwa",
+            "profile": "01H029VMT72RCEE55XYGRCSA6H",
+            "url_patterns": ["nextcloud.algata.in"]
+        },
+        {
+            "browser": "firefoxpwa",
             "profile": "01G3DDY4VBM6S5EDB1CPWDNSGR",
             "url_patterns": ["gitlab.com"]
         },

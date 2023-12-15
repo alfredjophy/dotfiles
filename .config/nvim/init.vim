@@ -83,7 +83,7 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 
 Plug 'mhinz/vim-startify'
 
-Plug 'alvan/vim-closetag'
+"Plug 'alvan/vim-closetag'
 
 Plug 'akinsho/toggleterm.nvim'
 

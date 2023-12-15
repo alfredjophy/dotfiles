@@ -8,7 +8,7 @@ for flatpakdir in ~/.local/share/flatpak/exports/bin /var/lib/flatpak/exports/bi
         contains $flatpakdir $PATH; or set -a PATH $flatpakdir
     end
 end
-export PATH=/bin/lscript:/bin/lscript:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/ajrx/.local/bin:$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/platform-tools:/home/ajrx/.local/share/npm/bin
+export PATH=/bin/lscript:/bin/lscript:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/ajrx/.local/bin:$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/platform-tools:/home/ajrx/.local/share/npm/bin:/home/ajrx/.local/share/cargo/bin
 
 #custom aliases
 alias 2048='2048 bluered'
@@ -35,5 +35,9 @@ alias php-server="php -S localhost:8080"
 alias bpytop="btop"
 alias ssh-clear='rm -rf ~/.ssh/sockets/*'
 alias wget="wget --hsts-file='$XDG_DATA_HOME/wget-hsts'"
+
+#if test "$TERM" = "xterm-kitty"
+    #alias ssh "kitty +kitten ssh"
+#end
 
 starship init fish | source

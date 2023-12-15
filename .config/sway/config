@@ -10,6 +10,12 @@ set $browser firefox
 
 default_border none
 
+blur enable
+
+default_dim_inactive 0.15
+
+scratchpad_minimize enable
+
 gaps inner 2
 gaps outer 1
 smart_gaps on
@@ -41,6 +47,7 @@ for_window [title="Moving *"] floating enable
 for_window [title="Deleting *"] floating enable
 for_window [title="Firefox — Sharing Indicator"] floating enable
 for_window [title="Progress Dialog — Dolphin"] floating enable
+for_window [title="KDE Connect URL handler"] floating enable
 
 #:::::;;;apps to hide:::::::::
 for_window [title="Firefox — Sharing Indicator"] move scratchpad
@@ -307,9 +314,9 @@ bindswitch --reload --locked lid:off output $laptop enable
 
 # Auto-run
 exec_always ~/.config/sway/env
-exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK 
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
 exec hash dbus-update-activation-environment 2>/dev/null && \
-     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
 exec_always systemctl --user start sway-session.target
 exec /usr/lib/xdg-desktop-portal --replace
 exec wl-paste -t text --watch clipman store
