@@ -30,3 +30,6 @@
     logl = log --oneline
     cm = commit -m
     undo = reset HEAD~1
+[user]
+	name = Alfred Jophy
+	email = alfredjophy129@gmail.com

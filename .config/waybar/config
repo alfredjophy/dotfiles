@@ -130,7 +130,7 @@
         "format-off": "󰂲",
         "format-disabled": "󰂲",
         "tooltip": false,
-        "on-click-right": "blueberry"
+        "on-click-right": "overskride"
     },
     "tray": {
         "icon-size": 21,

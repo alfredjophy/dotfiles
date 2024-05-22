@@ -14,13 +14,14 @@
     "coc-sh": ">=0.7.0",
     "coc-sql": ">=0.10.4",
     "coc-tsserver": ">=1.11.9",
-    "coc-snippets": ">=3.1.2",
+    "coc-snippets": ">=3.1.10",
     "coc-svelte": ">=0.4.2",
     "coc-tailwindcss": ">=0.7.0",
     "coc-fish": ">=1.0.11",
-    "coc-go": ">=1.3.17"
+    "coc-go": ">=1.3.17",
+    "coc-vale": ">=1.0.1"
   },
   "disabled": [],
   "locked": [],
-  "lastUpdate": 1702610303000
+  "lastUpdate": 1716340028605
 }
