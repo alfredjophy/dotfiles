@@ -1,5 +1,5 @@
 set nu
-set nowrap
+se nowrap
 set mouse=a
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
@@ -95,6 +95,8 @@ Plug 'liuchengxu/graphviz.vim'
 
 "Plug 'rcarriga/nvim-dap-ui'
 
+Plug 'supermaven-inc/supermaven-nvim'
+
 call plug#end()
 
 let g:better_escape_shortcut = ['fj','jf','FJ','JF']
@@ -153,6 +155,13 @@ post_hook = nil,              -- Function to run after the scrolling animation e
 )
 require'colorizer'.setup({'*'},{RRGGBBAA=true,rgb_fn=true,hsl_fn=true,css=true,css_fn=true})
 require("toggleterm").setup()
+require("supermaven-nvim").setup({
+  keymaps = {
+    accept_suggestion = "<C-p>",
+    clear_suggestion = "<C-]>",
+    accept_word = "<C-j>",
+  },
+})
 END
 
 " COC.nvim
